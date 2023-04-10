@@ -1,16 +1,17 @@
-import React, {FC} from 'react';
+import React, {FC, useRef} from 'react';
 import {FilterValueType} from './App';
 
 
 type TodoListPropsType = {
   title: string,
   tasks: TaskType[] // or Generic Array<TaskType>
-  removeTask: (taskId: number) => void
+  removeTask: (taskId: string) => void
+  addTask: (title: string) => void
   changeFilter: (nextfilter: FilterValueType) => void
 }
 
 export type TaskType = {
-  id: number,
+  id: string,
   title: string,
   isDone: boolean,
 }
@@ -22,6 +23,9 @@ const TodoList: FC<TodoListPropsType> = (props) => {
   // prop.task.map() === СОЗДАЕТ НОВЫЙ МАССИВ ЕСЛИ МАПИТЬСЯ
   // Вынести в переменную можно, для облегчения JSX, который ниже
   // Мы код больше повторно испольховать не будем, поэтому можно не выносить
+  const taskTitleInput = useRef<HTMLInputElement>(null)
+  ///// Hook useRef
+
   const taskListElements = props.tasks.map((task: TaskType) => {
     return (
       <li>
@@ -39,8 +43,13 @@ const TodoList: FC<TodoListPropsType> = (props) => {
     <div className="todolist">
       <h3>{props.title}</h3>
       <div>
-        <input/>
-        <button>+</button>
+        <input ref={taskTitleInput}/>
+        <button onClick={() => {
+          if (taskTitleInput.current) {
+            props.addTask(taskTitleInput.current.value)
+          }
+        }}>+
+        </button>
       </div>
       <ul>
         {taskListElements}
