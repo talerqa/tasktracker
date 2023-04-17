@@ -32,6 +32,10 @@ function App() {
     // newTaskType добавляется в новый массив tasks при помощи спред оператора ...task мы добавляем нашу новую таску в имеющийся массив. setTask - обновляется стейт
   }
 
+  const changeTaskStatus = (taskId: string, newIsDoneValue: boolean) => {
+    setTasks(tasks.map(t => t.id === taskId ? {...t, isDone: newIsDoneValue} : t))
+  }
+
   const changeFilter = (nextfilter: FilterValueType) => {
     setFilter(nextfilter)
   }
@@ -55,9 +59,11 @@ function App() {
       <TodoList
         title={todolistTitle}
         tasks={tasksWhatIWantToSee}
+        filter={filter}
         addTask={addTask}
         removeTask={removeTask}
         changeFilter={changeFilter}
+        changeTaskStatus={changeTaskStatus}
       />
     </div>
   );
