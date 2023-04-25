@@ -10,7 +10,7 @@ function App() {
   const [tasks, setTasks] = useState<Array<TaskType>>(
     [//setTasks получаем из внешнего мира, мы нигде ее не объявили. setState это функция
       //task = переменная. изначальное состояние
-      //setTasks = новое состояние?
+      //setTasks = новое состояние?F
       {id: v1(), title: 'HTML&CSS', isDone: false},
       {id: v1(), title: 'JS/ES6&TS', isDone: true},
       {id: v1(), title: 'REACT/REDUX', isDone: false},
@@ -33,6 +33,7 @@ function App() {
   }
 
   const changeTaskStatus = (taskId: string, newIsDoneValue: boolean) => {
+
     setTasks(tasks.map(t => t.id === taskId ? {...t, isDone: newIsDoneValue} : t))
   }
 
