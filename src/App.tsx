@@ -4,7 +4,6 @@ import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import Component from './Component';
 
-
 export type FilterValuesType = 'all' | 'active' | 'completed';
 type todolistsType = { id: string, title: string, filter: FilterValuesType }
 type AssocTasksType = {

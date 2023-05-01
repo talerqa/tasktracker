@@ -1,6 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
-import todoList from '../srcViktor/TodoList';
+/*import todoList from '../srcViktor/TodoList';*/
 
 export type TaskType = {
   id: string
@@ -48,7 +48,6 @@ export function Todolist(props: PropsType) {
   const onAllClickHandler = () => props.changeFilter(props.todoListId, 'all');
   const onActiveClickHandler = () => props.changeFilter(props.todoListId, 'active');
   const onCompletedClickHandler = () => props.changeFilter(props.todoListId, 'completed');
-
 
   return <div>
     <h3>{props.title}

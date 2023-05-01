@@ -5,7 +5,6 @@ type ComponentPropsType = {
   title: string
 }
 
-
 const Component = (props: ComponentPropsType) => {
   console.log(props.title)
   console.log(props.tasks)
