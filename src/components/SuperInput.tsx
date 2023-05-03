@@ -1,24 +1,13 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 
-type PropsItemForm = {
-  todolistId: string
-  addTask: (newTitle: string, todolistId: string ) => void
+type SuperInputType = {
+  callback: (title: string) => void
 }
 
-export const AddItemForm = (props: PropsItemForm) => {
-
-  let [title, setTitle] = useState('')
+const SuperInput = (props: SuperInputType) => {
+  let [title, setTitle] = useState("")
   let [error, setError] = useState<string | null>(null)
 
-  const addTask = () => {
-    let newTitle = title.trim();
-    if (newTitle !== "") {
-      props.addTask(newTitle, props.todolistId);
-      setTitle("");
-    } else {
-      setError("Title is required");
-    }
-  }
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value)
@@ -30,17 +19,26 @@ export const AddItemForm = (props: PropsItemForm) => {
       addTask();
     }
   }
+  const addTask = () => {
+    let newTitle = title.trim();
+    if (newTitle !== "") {
+        props.callback(newTitle);
+      setTitle("");
+    } else {
+      setError("Title is required");
+    }
+  }
 
   return (
     <div>
       <input value={title}
              onChange={onChangeHandler}
              onKeyPress={onKeyPressHandler}
-             className={error ? 'error' : ''}
+             className={error ? "error" : ""}
       />
       <button onClick={addTask}>+</button>
-      {error && <div className="error-message">{error}</div>}
-    </div>
+      {error && <div className="error-message">{error}</div>}    </div>
   );
 };
 
+export default SuperInput;

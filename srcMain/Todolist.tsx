@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
+import {EditableSpan} from '../src/Components/EditableSpan';
 /*import todoList from '../srcViktor/TodoList';*/
 
 export type TaskType = {
@@ -18,6 +19,8 @@ type PropsType = {
   changeTaskStatus: (todoListID: string, taskId: string, isDone: boolean) => void
   filter: FilterValuesType
   deleteTodoList: (todoListId: string) => void
+  updateTaskTitle: (taskId: string, title: string, todolistId: string) => void
+  changeTitleTodoList: (id: string, title: string) => void
 }
 
 export function Todolist(props: PropsType) {
@@ -33,25 +36,28 @@ export function Todolist(props: PropsType) {
       setError('Title is required');
     }
   }
-
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value)
   }
-
   const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
     setError(null);
     if (e.charCode === 13) {
       addTask();
     }
   }
-
   const onAllClickHandler = () => props.changeFilter(props.todoListId, 'all');
   const onActiveClickHandler = () => props.changeFilter(props.todoListId, 'active');
   const onCompletedClickHandler = () => props.changeFilter(props.todoListId, 'completed');
+  const onChangeTitleTodoList = (title: string) => {
+    props.changeTitleTodoList(props.todoListId, title)
+  }
 
   return <div>
-    <h3>{props.title}
-      <button onClick={()=> props.deleteTodoList(props.todoListId)}>x</button>
+    <h3>
+      <EditableSpan oldTitle={props.title} callBack={(title) => {
+        onChangeTitleTodoList(title)
+      }}/>
+      <button onClick={() => props.deleteTodoList(props.todoListId)}>x</button>
     </h3>
 
     <div>
