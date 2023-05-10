@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
-import SuperInput from './Components/SuperInput';
+import AddItemForm from './Components/AddItemForm';
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -28,6 +28,9 @@ function App() {
     let [tasks, setTasks] = useState<TasksStateType>({
       [todolistId1]: [
         {id: v1(), title: 'HTML&CSS', isDone: true},
+        {id: v1(), title: 'react', isDone: false},
+        {id: v1(), title: 'SCSS', isDone: true},
+        {id: v1(), title: 'Angular', isDone: false},
         {id: v1(), title: 'JS', isDone: true}
       ],
       [todolistId2]: [
@@ -111,7 +114,7 @@ function App() {
 
   return (
     <div className="App">
-      <SuperInput callback={addTodoList}/>
+      <AddItemForm callback={addTodoList}/>
       {todolists.map(tl => {
         let allTodolistTasks = tasks[tl.id];
         let tasksForTodolist = allTodolistTasks;
