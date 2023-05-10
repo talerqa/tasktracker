@@ -33,27 +33,35 @@ const AddItemForm = (props: SuperInputType) => {
   }
 
   const muiStylesButton = {
-    maxWidth: '30px',
-    maxHeight: '30px',
-    minWidth: '30px',
-    minHeight: '30px',
+    maxWidth: '39px',
+    maxHeight: '39px',
+    minWidth: '39px',
+    minHeight: '39px',
     backgroundColor: 'black'
   }
   return (
     <div>
-      <TextField value={title}
+
+
+
+      <TextField size={'small'}
+                 value={title}
+                 error={!!error}
                  onChange={onChangeHandler}
                  onKeyPress={onKeyPressHandler}
-                 id="outlined-basic" label="Outlined"
-                 variant="outlined"/>
+                 id={error ? "outlined-error" : "outlined-basic"}
+                 label={error ? "Type out smthg" : "Add task"}
+                 variant="outlined"
+
+      />
 
 
       <Button onClick={addTask}
               variant="contained"
               style={muiStylesButton}
       >+</Button>
-
-      {error && <div className="error-message">{error}</div>}    </div>
+      {/*{error && <div className="error-message">{error}</div>} */}
+    </div>
   );
 };
 

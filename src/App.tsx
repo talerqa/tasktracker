@@ -3,6 +3,7 @@ import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import AddItemForm from './Components/AddItemForm';
+import {ButtonAppBar} from './ButtonAppBar';
 
 export type FilterValuesType = "all" | "active" | "completed";
 type TodolistType = {
@@ -28,7 +29,7 @@ function App() {
     let [tasks, setTasks] = useState<TasksStateType>({
       [todolistId1]: [
         {id: v1(), title: 'HTML&CSS', isDone: true},
-        {id: v1(), title: 'react', isDone: false},
+        {id: v1(), title: 'React', isDone: false},
         {id: v1(), title: 'SCSS', isDone: true},
         {id: v1(), title: 'Angular', isDone: false},
         {id: v1(), title: 'JS', isDone: true}
@@ -114,6 +115,9 @@ function App() {
 
   return (
     <div className="App">
+
+      <ButtonAppBar/>
+
       <AddItemForm callback={addTodoList}/>
       {todolists.map(tl => {
         let allTodolistTasks = tasks[tl.id];
