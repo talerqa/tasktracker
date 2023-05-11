@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 import {addTodolistAC, changeFilterValueAC, removeTodoListAC, todolistsReducer} from './Reducers/todolistsReducer';
-import {addTaskAC, taskReducer} from './Reducers/taskReducer';
+import {addTaskAC, removeTaskAC, taskReducer} from './Reducers/taskReducer';
 
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
@@ -47,8 +47,8 @@ function App() {
     ]
   });
 
-
   function removeTask(id: string, todolistId: string) {
+    dispatchTask(removeTaskAC(id, todolistId))
     // //достанем нужный массив по todolistId:
     // let todolistTasks = tasks[todolistId];
     // // перезапишем в этом объекте массив для нужного тудулиста отфилтрованным массивом:
@@ -100,7 +100,6 @@ function App() {
     // setTasks({...tasks});
   }
 
-  console.log(todolists)
   function addTodoList(title: string) {
 
     let todolistId = v1()
