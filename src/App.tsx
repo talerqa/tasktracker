@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 import {addTodolistAC, changeFilterValueAC, removeTodoListAC, todolistsReducer} from './Reducers/todolistsReducer';
-import {addTaskAC, removeTaskAC, taskReducer} from './Reducers/taskReducer';
+import {addTaskAC, addTaskEmptyAC, changeStatusAC, removeTaskAC, taskReducer} from './Reducers/taskReducer';
 
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
@@ -49,25 +49,16 @@ function App() {
 
   function removeTask(id: string, todolistId: string) {
     dispatchTask(removeTaskAC(id, todolistId))
-    // //достанем нужный массив по todolistId:
-    // let todolistTasks = tasks[todolistId];
-    // // перезапишем в этом объекте массив для нужного тудулиста отфилтрованным массивом:
-    // tasks[todolistId] = todolistTasks.filter(t => t.id != id);
-    // // засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
-    // setTasks({...tasks});
   }
 
   function addTask(title: string, todolistId: string) {
-    // let task = {id: v1(), title: title, isDone: false};
-    // //достанем нужный массив по todolistId:
-    // let todolistTasks = tasks[todolistId];
-    // // перезапишем в этом объекте массив для нужного тудулиста копией, добавив в начало новую таску:
-    // tasks[todolistId] = [task, ...todolistTasks];
-    // // засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
-    // setTasks({...tasks});
+    dispatchTask(addTaskAC(title, todolistId))
   }
 
   function changeStatus(id: string, isDone: boolean, todolistId: string) {
+    dispatchTask(changeStatusAC(id, isDone, todolistId))
+
+
     // //достанем нужный массив по todolistId:
     // let todolistTasks = tasks[todolistId];
     // // найдём нужную таску:
@@ -79,36 +70,20 @@ function App() {
     //   setTasks({...tasks});
     // }
   }
-
-
   function changeFilter(value: FilterValuesType, todolistId: string) {
+
+
     dispatchTodolist(changeFilterValueAC(value, todolistId))
   }
-
-  function removeTodolist(todolistId: string) {
+  function removeTodolist( todolistId: string) {
     dispatchTodolist(removeTodoListAC(todolistId))
-    //СДЕЛАТЬ ДИСПАТЧ НА ТАСКИ В ДРУГОМ РЕДЬЮСЕРЕ
     delete tasks[todolistId]
-
-
-
-    // засунем в стейт список тудулистов, id которых не равны тому, который нужно выкинуть
-    //setTodolists(todolists.filter(tl => tl.id != id));
-    // удалим таски для этого тудулиста из второго стейта, где мы храним отдельно таски
-    // delete tasks[todolistId]; // удаляем св-во из объекта... значением которого являлся массив тасок
-    // // засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
-    // setTasks({...tasks});
   }
 
   function addTodoList(title: string) {
-
     let todolistId = v1()
     dispatchTodolist(addTodolistAC(title, todolistId))
-    dispatchTask(addTaskAC(todolistId))
-
-    // let newTodoList: TodolistType = {id: todolistId, title: title, filter: 'all'}
-    // //   setTodolists([...todolists, newTodoList]);
-
+    dispatchTask(addTaskEmptyAC(todolistId, ''))
   }
 
   function updateTaskTitle(taskId: string, title: string, todolistId: string) {
