@@ -94,7 +94,7 @@ export const changeStatusAC = (id: string, isDone: boolean, todolistId: string) 
   } as const
 }
 
-//
+//Измняем название таски
 export const updateTaskTitleAC = (id: string, title: string, todolistId: string) => {
   return {
     type: 'UPDATE-TITLE-TASK',

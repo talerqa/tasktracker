@@ -8,7 +8,13 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-import {addTodolistAC, changeFilterValueAC, removeTodoListAC, todolistsReducer} from './Reducers/todolistsReducer';
+import {
+  addTodolistAC,
+  changeFilterValueAC,
+  changeTodolistTitleAC,
+  removeTodoListAC,
+  todolistsReducer
+} from './Reducers/todolistsReducer';
 import {
   addTaskAC,
   addTaskEmptyAC,
@@ -84,13 +90,10 @@ function App() {
   }
 
   function changeTitleTodoList(id: string, title: string) {
-    // setTodolists([...todolists.map(el => el.id === id
-    // ? {...el, title: title}
-    // : el
-    // )]
-    // )
+    dispatchTodolist(changeTodolistTitleAC(id, title))
   }
 
+  console.log(todolists)
   return (
     <div className="App">
 
