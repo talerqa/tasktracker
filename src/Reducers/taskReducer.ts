@@ -1,11 +1,12 @@
 import {TasksStateType} from '../App';
 import {v1} from 'uuid';
 
-type CommonACType = AddTaskEmptyACType | RemoveTaskAC | AddTaskACTypeAC | ChangeStatusTypeAC
+type CommonACType = AddTaskEmptyACType | RemoveTaskACType | AddTaskACTypeACType | ChangeStatusTypeACType | UpdateTaskTitleACType
 type AddTaskEmptyACType = ReturnType<typeof addTaskEmptyAC>
-type RemoveTaskAC = ReturnType<typeof removeTaskAC>
-type AddTaskACTypeAC = ReturnType<typeof addTaskAC>
-type ChangeStatusTypeAC = ReturnType<typeof changeStatusAC>
+type RemoveTaskACType = ReturnType<typeof removeTaskAC>
+type AddTaskACTypeACType = ReturnType<typeof addTaskAC>
+type ChangeStatusTypeACType = ReturnType<typeof changeStatusAC>
+type UpdateTaskTitleACType = ReturnType<typeof updateTaskTitleAC>
 
 export const taskReducer = (state: TasksStateType, action: CommonACType) => {
 
@@ -35,6 +36,15 @@ export const taskReducer = (state: TasksStateType, action: CommonACType) => {
             : task)
       }
     }
+    case 'UPDATE-TITLE-TASK': {
+      return {
+        ...state,
+        [action.payload.todolistId]: state[action.payload.todolistId]
+          .map(task => task.id === action.payload.id
+            ? {...task, title: action.payload.title}
+            : task)
+      }
+    }
     default :
       return state
   }
@@ -42,7 +52,7 @@ export const taskReducer = (state: TasksStateType, action: CommonACType) => {
 
 
 //Добавляем пустую таску при добавлении Туду листа
-export const addTaskEmptyAC = (todolistId: string, title: string) => {
+export const addTaskEmptyAC = (todolistId: string) => {
   return {
     type: 'ADD-TASK-EMPTY',
     payload: {
@@ -72,12 +82,25 @@ export const removeTaskAC = (id: string, todolistId: string) => {
   } as const
 }
 
+//Изменяем статус таски
 export const changeStatusAC = (id: string, isDone: boolean, todolistId: string) => {
   return {
     type: 'CHANGE-STATUS-TASK',
     payload: {
       id,
       isDone,
+      todolistId
+    }
+  } as const
+}
+
+//
+export const updateTaskTitleAC = (id: string, title: string, todolistId: string) => {
+  return {
+    type: 'UPDATE-TITLE-TASK',
+    payload: {
+      id,
+      title,
       todolistId
     }
   } as const

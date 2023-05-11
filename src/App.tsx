@@ -9,7 +9,14 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 import {addTodolistAC, changeFilterValueAC, removeTodoListAC, todolistsReducer} from './Reducers/todolistsReducer';
-import {addTaskAC, addTaskEmptyAC, changeStatusAC, removeTaskAC, taskReducer} from './Reducers/taskReducer';
+import {
+  addTaskAC,
+  addTaskEmptyAC,
+  changeStatusAC,
+  removeTaskAC,
+  taskReducer,
+  updateTaskTitleAC
+} from './Reducers/taskReducer';
 
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
@@ -27,7 +34,7 @@ function App() {
   let todolistId1 = v1();
   let todolistId2 = v1();
 
-  // @ts-ignore
+
   let [todolists, dispatchTodolist] = useReducer(todolistsReducer, [
     {id: todolistId1, title: 'What to learn', filter: 'all'},
     {id: todolistId2, title: 'What to buy', filter: 'all'},
@@ -57,22 +64,8 @@ function App() {
 
   function changeStatus(id: string, isDone: boolean, todolistId: string) {
     dispatchTask(changeStatusAC(id, isDone, todolistId))
-
-
-    // //достанем нужный массив по todolistId:
-    // let todolistTasks = tasks[todolistId];
-    // // найдём нужную таску:
-    // let task = todolistTasks.find(t => t.id === id);
-    // //изменим таску, если она нашлась
-    // if (task) {
-    //   task.isDone = isDone;
-    //   // засетаем в стейт копию объекта, чтобы React отреагировал перерисовкой
-    //   setTasks({...tasks});
-    // }
   }
   function changeFilter(value: FilterValuesType, todolistId: string) {
-
-
     dispatchTodolist(changeFilterValueAC(value, todolistId))
   }
   function removeTodolist( todolistId: string) {
@@ -83,15 +76,11 @@ function App() {
   function addTodoList(title: string) {
     let todolistId = v1()
     dispatchTodolist(addTodolistAC(title, todolistId))
-    dispatchTask(addTaskEmptyAC(todolistId, ''))
+    dispatchTask(addTaskEmptyAC(todolistId))
   }
 
-  function updateTaskTitle(taskId: string, title: string, todolistId: string) {
-    // setTasks({
-    //   ...tasks, [todolistId]: tasks[todolistId].map(el => el.id === taskId
-    //     ? {...el, title: title}
-    //     : el)
-    // });
+  function updateTaskTitle(id: string, title: string, todolistId: string) {
+    dispatchTask(updateTaskTitleAC(id, title, todolistId))
   }
 
   function changeTitleTodoList(id: string, title: string) {
