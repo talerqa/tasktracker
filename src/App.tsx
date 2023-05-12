@@ -41,7 +41,7 @@ function App() {
   let todolistId2 = v1();
 
 
-  let [todolists, dispatchTodolist] = useReducer(todolistsReducer, [
+ let [todolists, dispatchTodolist] = useReducer(todolistsReducer, [
     {id: todolistId1, title: 'What to learn', filter: 'all'},
     {id: todolistId2, title: 'What to buy', filter: 'all'},
   ]);
@@ -93,7 +93,6 @@ function App() {
     dispatchTodolist(changeTodolistTitleAC(id, title))
   }
 
-  console.log(todolists)
   return (
     <div className="App">
 

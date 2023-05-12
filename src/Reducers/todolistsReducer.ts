@@ -1,13 +1,13 @@
 import {FilterValuesType, TodolistType} from '../App';
 
-type CommonTypeAC = ChangeFilterValueTypeACType | RemoveTodoListACType | AddTodolistACType | ChangeTodolistTitleACType
+export type CommonTypeAC = ChangeFilterValueTypeACType | RemoveTodoListACType | AddTodolistACType | ChangeTodolistTitleACType
 
-type ChangeFilterValueTypeACType = ReturnType<typeof changeFilterValueAC>
+export type ChangeFilterValueTypeACType = ReturnType<typeof changeFilterValueAC>
 type RemoveTodoListACType = ReturnType<typeof removeTodoListAC>
 type AddTodolistACType = ReturnType<typeof addTodolistAC>
 type ChangeTodolistTitleACType = ReturnType<typeof changeTodolistTitleAC>
 
-export const todolistsReducer = (state: TodolistType[], action: CommonTypeAC) => {
+export const todolistsReducer = (state: TodolistType[], action: CommonTypeAC): TodolistType[]  => {
   switch (action.type) {
     case 'CHANGE-FILTER': {
       return state.map(todoList => todoList.id === action.payload.todolistId ? {
