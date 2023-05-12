@@ -60,6 +60,7 @@ function App() {
     ]
   });
 
+
   function removeTask(id: string, todolistId: string) {
     dispatchTask(removeTaskAC(id, todolistId))
   }

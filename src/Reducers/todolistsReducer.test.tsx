@@ -1,5 +1,11 @@
 import {v1} from 'uuid';
-import {ChangeFilterValueTypeACType, CommonTypeAC, todolistsReducer} from './todolistsReducer';
+import {
+  addTodolistAC,
+  changeFilterValueAC,
+  changeTodolistTitleAC,
+  removeTodoListAC,
+  todolistsReducer
+} from './todolistsReducer';
 import {TodolistType} from '../App';
 
 test('change filter todolist', () => {
@@ -11,14 +17,8 @@ test('change filter todolist', () => {
     {id: todolistId2, title: 'What to buy', filter: 'all'},
   ]
   const filter = 'active';
-  const action: ChangeFilterValueTypeACType = {
-    type: 'CHANGE-FILTER',
-    payload: {
-      value: filter,
-      todolistId: todolistId1
-    }
-  };
-  const endState = todolistsReducer(initialState, action);
+
+  const endState = todolistsReducer(initialState, changeFilterValueAC(filter, todolistId1));
   expect(endState.length).toBe(2);
   expect(endState[0].filter).toBe(filter);
 });
@@ -32,14 +32,7 @@ test('remove todolist', () => {
     {id: todolistId1, title: 'What to learn', filter: 'all'},
     {id: todolistId2, title: 'What to buy', filter: 'all'},
   ]
-
-  const action: CommonTypeAC = {
-    type: 'REMOVE-TODOLIST',
-    payload: {
-      todolistId: todolistId1
-    }
-  };
-  const endState = todolistsReducer(initialState, action);
+  const endState = todolistsReducer(initialState, removeTodoListAC(todolistId1));
   expect(endState.length).toBe(1);
 });
 
@@ -53,14 +46,7 @@ test('add todolist', () => {
     {id: todolistId2, title: 'What to buy', filter: 'all'},
   ]
 
-  const action: CommonTypeAC = {
-    type: 'ADD-TODOLIST',
-    payload: {
-      title: 'New title',
-      todolistId: todolistId3
-    }
-  };
-  const endState = todolistsReducer(initialState, action);
+  const endState = todolistsReducer(initialState, addTodolistAC('New title', todolistId3));
   expect(endState.length).toBe(3);
   expect(endState[0].title).toBe('New title');
 });
@@ -74,13 +60,6 @@ test('change TodoList Title', () => {
     {id: todolistId2, title: 'What to buy', filter: 'all'},
   ]
 
-  const action: CommonTypeAC = {
-    type: 'CHANGE-TODOLIST-TITLE',
-    payload: {
-      title: 'New title',
-      id: todolistId1
-    }
-  };
-  const endState = todolistsReducer(initialState, action);
+  const endState = todolistsReducer(initialState, changeTodolistTitleAC(todolistId1, 'New title'));
   expect(endState[0].title).toBe('New title');
 });
