@@ -24,7 +24,6 @@ test('add task empty for new todolist', () => {
   expect(endState[todolistId3].length).toBe(0);
 });
 
-
 test('add task', () => {
   let todolistId1 = v1();
   let todolistId2 = v1();
@@ -87,11 +86,10 @@ test('change status task', () => {
   }
 
   const endState = taskReducer(initialState, changeStatusAC(taskId, false, todolistId1));
-  expect(endState[todolistId1].find( f => f.id === taskId).isDone).toBe(false);
+  expect(endState[todolistId1].find( f => f.id === taskId)!.isDone).toBe(false);
 });
 
-
-test('change status task', () => {
+test('change title task', () => {
   let todolistId1 = v1();
   let todolistId2 = v1();
   let taskId = v1();
@@ -110,5 +108,5 @@ test('change status task', () => {
   }
 
   const endState = taskReducer(initialState, updateTaskTitleAC(taskId, 'TITLE', todolistId1));
-  expect(endState[todolistId1].find( f => f.id === taskId).title).toBe('TITLE');
+  expect(endState[todolistId1].find( f => f.id === taskId)!.title).toBe('TITLE');
 });
