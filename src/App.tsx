@@ -40,8 +40,11 @@ function App() {
   let todolistId1 = v1();
   let todolistId2 = v1();
 
+  let placeholderTodoList = 'Add Todolist';
+  let placeholderTask = 'Add Task';
 
- let [todolists, dispatchTodolist] = useReducer(todolistsReducer, [
+
+  let [todolists, dispatchTodolist] = useReducer(todolistsReducer, [
     {id: todolistId1, title: 'What to learn', filter: 'all'},
     {id: todolistId2, title: 'What to buy', filter: 'all'},
   ]);
@@ -101,7 +104,7 @@ function App() {
 
       <Container fixed>
         <Grid container style={{padding: '10px'}}>
-          <AddItemForm callback={addTodoList}/>
+          <AddItemForm callback={addTodoList} placeholder={placeholderTodoList}/>
         </Grid>
 
 
@@ -120,6 +123,7 @@ function App() {
               <Paper elevation={5} style={{padding: '10px'}}>
                 <Todolist
                   id={tl.id}
+                  placeholder={placeholderTask}
                   title={tl.title}
                   tasks={tasksForTodolist}
                   removeTask={removeTask}

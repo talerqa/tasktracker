@@ -2,15 +2,14 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-
 type SuperInputType = {
   callback: (title: string) => void
+  placeholder: string
 }
 
 const AddItemForm = (props: SuperInputType) => {
   let [title, setTitle] = useState('')
   let [error, setError] = useState<string | null>(null)
-
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value)
@@ -50,7 +49,7 @@ const AddItemForm = (props: SuperInputType) => {
                  onChange={onChangeHandler}
                  onKeyPress={onKeyPressHandler}
                  id={error ? "outlined-error" : "outlined-basic"}
-                 label={error ? "Type out smthg" : "Add task"}
+                 label={error ? "Type out smthg" : props.placeholder}
                  variant="outlined"
 
       />

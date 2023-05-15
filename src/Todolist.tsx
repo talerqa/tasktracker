@@ -16,6 +16,7 @@ export type TaskType = {
 type PropsType = {
     id: string;
     title: string;
+    placeholder: string;
     tasks: Array<TaskType>;
     removeTask: (taskId: string, todolistId: string) => void;
     changeFilter: (value: FilterValuesType, todolistId: string) => void;
@@ -54,7 +55,7 @@ export function Todolist(props: PropsType) {
                   <DeleteIcon fontSize="small" />
               </IconButton>
           </h3>
-          <AddItemForm callback={callBackSuperInput} />
+          <AddItemForm callback={callBackSuperInput} placeholder={props.placeholder}/>
           <ul>
               {props.tasks.map(t => {
                   const onClickHandler = () => props.removeTask(t.id, props.id);
