@@ -8,8 +8,7 @@ type AddTaskACTypeACType = ReturnType<typeof addTaskAC>
 type ChangeStatusTypeACType = ReturnType<typeof changeStatusAC>
 type UpdateTaskTitleACType = ReturnType<typeof updateTaskTitleAC>
 
-export const taskReducer = (state: TasksStateType, action: CommonACType) => {
-
+export const taskReducer = (state: TasksStateType, action: CommonACType): TasksStateType => {
   switch (action.type) {
     case 'ADD-TASK-EMPTY' : {
       return {[action.payload.todolistId]: [], ...state}
