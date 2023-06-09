@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {memo, useCallback, useReducer} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
@@ -28,7 +28,7 @@ export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
 
-function AppWithReducer() {
+export const AppWithReducer = memo(() => {
     let todolistId1 = v1();
     let todolistId2 = v1();
 
@@ -52,9 +52,9 @@ function AppWithReducer() {
         dispatchToTasks(removeTaskAC(id, todolistId))
     }
 
-    function addTask(title: string, todolistId: string) {
+    const addTask = useCallback((title: string, todolistId: string) => {
         dispatchToTasks(addTaskAC(title, todolistId));
-    }
+    }, [dispatchToTasks])
 
     function changeStatus(id: string, isDone: boolean, todolistId: string) {
         dispatchToTasks(changeTaskStatusAC(id, isDone, todolistId))
@@ -138,6 +138,6 @@ function AppWithReducer() {
           </Container>
       </div>
     );
-}
+})
 
-export default AppWithReducer;
+
