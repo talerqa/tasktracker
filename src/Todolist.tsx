@@ -1,4 +1,4 @@
-import React, {memo, useCallback} from 'react';
+import React, {memo, useCallback, useMemo} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from './AddItemForm';
 import {EditableSpan} from './EditableSpan';
@@ -44,22 +44,27 @@ export const Todolist = memo((props: PropsType) => {
     const onCompletedClickHandler = useCallback(() => props.changeFilter('completed', props.id), [props.id]);
 
 
+    // let tasks = props.tasks;
+    //
+    // if (props.filter === 'active') {
+    //     tasks = tasks.filter(t => t.isDone === false);
+    // }
+    // if (props.filter === 'completed') {
+    //     tasks = tasks.filter(t => t.isDone === true);
+    // }
+
+
     let tasks = props.tasks;
     if (props.filter === 'active') {
         tasks = tasks.filter(t => t.isDone === false);
     }
     if (props.filter === 'completed') {
-        tasks = tasks.filter(t => t.isDone === true);
+         tasks = tasks.filter(t => t.isDone === true);
     }
 
-
-    const onClickHandler = useCallback((taskId: string) => props.removeTask(taskId, props.id), [props.removeTask, props.id])
-    const changeTaskStatus = useCallback((taskId: string, isDone: boolean) => {
-        props.changeTaskStatus(taskId, isDone, props.id);
-    }, [props.changeTaskStatus, props.id])
-    const onTitleChangeHandler = useCallback((taskId: string, newTitle: string) => {
-        props.changeTaskTitle(taskId, newTitle, props.id);
-    }, [props.changeTaskTitle, props.id])
+    let taskMemo = useMemo(() => {
+        return tasks
+    }, [tasks, props.filter])
 
     return <div>
         <h3>
@@ -71,10 +76,10 @@ export const Todolist = memo((props: PropsType) => {
         <AddItemForm addItem={addTask}/>
         <div>
             {
-                tasks.map(t => {
-                    return <TaskWithRedux key={t.id} task={t} removeTask={onClickHandler}
-                                          changeTaskStatus={changeTaskStatus}
-                                          changeTaskTitle={onTitleChangeHandler}/>
+                taskMemo.map(t => {
+                    return <TaskWithRedux
+                      todolistId={props.id}
+                      key={t.id} task={t}/>
                 })
             }
         </div>
