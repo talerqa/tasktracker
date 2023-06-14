@@ -1,9 +1,10 @@
-import React, {memo, useCallback, useReducer, useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm';
-
+import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@mui/material";
+import {Menu} from "@mui/icons-material";
 import {
     addTodolistAC,
     changeTodolistFilterAC,
@@ -12,8 +13,6 @@ import {
     todolistsReducer
 } from './state/todolists-reducer';
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksReducer} from './state/tasks-reducer';
-import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@mui/material";
-import {Menu} from "@mui/icons-material";
 
 export type FilterValuesType = "all" | "active" | "completed";
 export type TodolistType = {
@@ -28,7 +27,6 @@ export type TasksStateType = {
 
 
 function AppWithReducers() {
-    console.log('App')
     let todolistId1 = v1();
     let todolistId2 = v1();
 
@@ -53,10 +51,10 @@ function AppWithReducers() {
         dispatchToTasks(action);
     }
 
-    const addTask = useCallback((title: string, todolistId: string) => {
+    function addTask(title: string, todolistId: string) {
         const action = addTaskAC(title, todolistId);
         dispatchToTasks(action);
-    }, [dispatchToTasks])
+    }
 
     function changeStatus(id: string, isDone: boolean, todolistId: string) {
         const action = changeTaskStatusAC(id, isDone, todolistId);
