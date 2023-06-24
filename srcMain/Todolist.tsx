@@ -6,7 +6,7 @@ import {EditableSpan} from '../src/Components/EditableSpan';
 export type TaskType = {
   id: string
   title: string
-  isDone: boolean
+
 }
 
 type PropsType = {

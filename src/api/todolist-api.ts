@@ -7,10 +7,10 @@ const instance = axios.create({
   headers: {}
 })
 
-type TodoListType = {
+export type TodoListType = {
   id: string,
   title: string,
-  addedDate: Date,
+  addedDate: string,
   order: number
 }
 
