@@ -105,7 +105,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
     case 'ADD-TODOLIST': {
       return {
         ...state,
-        [action.todolistId]: []
+        [action.todolist.id]: []
       }
     }
     case 'REMOVE-TODOLIST': {
@@ -156,13 +156,13 @@ export const deleteTaskThunkCreator = (todoId: string, taskId: string) => (dispa
     })
 }
 
-
 export const addTaskThunkCreator = (todoId: string, title: string) => (dispatch: Dispatch) => {
   todolistsAPI.createTask(todoId, title)
     .then((res) => {
       dispatch(addTaskAC(res.data.data.item))
     })
 }
+
 export const changeTaskStatusThunkCreator = (taskId: string, status: TaskStatuses, todolistId: string) => (dispatch: Dispatch, getState: () => AppRootStateType) => {
   const task = getState().tasks[todolistId].find(t => t.id === taskId)
 
@@ -178,5 +178,23 @@ export const changeTaskStatusThunkCreator = (taskId: string, status: TaskStatuse
   todolistsAPI.updateTask(todolistId,taskId,model)
     .then((res)=>{
       dispatch(changeTaskStatusAC(taskId,status, todolistId))
+    })
+}
+
+export const updateTaskTitleThunkCreator = (taskId: string, title: string, todolistId: string) => (dispatch: Dispatch, getState: () => AppRootStateType) => {
+  const task = getState().tasks[todolistId].find(t => t.id === taskId)
+
+  const model: UpdateTaskModelType = {
+    title,
+    startDate: task!.startDate,
+    priority: task!.priority,
+    description: task!.description,
+    deadline: task!.deadline,
+    status: task!.status
+  }
+
+  todolistsAPI.updateTask(todolistId,taskId,model)
+    .then((res)=>{
+      dispatch(changeTaskTitleAC(taskId, title, todolistId))
     })
 }
