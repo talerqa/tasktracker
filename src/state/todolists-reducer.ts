@@ -1,7 +1,7 @@
-import {v1} from 'uuid';
-import {todolistsAPI, TodolistType} from '../api/todolists-api'
+import {TaskType, todolistsAPI, TodolistType} from '../api/todolists-api'
 import {Dispatch} from 'redux';
 import {TodoListDomainType} from '../../src13/state/todolists-reducer';
+import {AppRootStateType} from './store';
 
 export type RemoveTodolistActionType = {
     type: 'REMOVE-TODOLIST',
@@ -109,8 +109,28 @@ export const removeTodolistThunkCreator = (todolistId: string) => (dispatch: Dis
 }
 
 export const addTodolistThunkCreator = (title: string) => (dispatch: Dispatch) => {
-    todolistsAPI.createTodolist(title)
-      .then((res) => {
-          dispatch(addTodolistAC(res.data.data.item))
-      })
+  todolistsAPI.createTodolist(title)
+    .then((res) => {
+      dispatch(addTodolistAC(res.data.data.item))
+    })
 }
+
+export const changeTodolistTitleThunkCreator = (todolistId: string, title: string) => (dispatch: Dispatch, getState: () => AppRootStateType) => {
+
+  // const todolist = getState().todolists.find(t => t.id === todolistId)
+  //
+  // const modelTodolist: TodolistType = {
+  //   title,
+  //   order: todolist!.order,
+  //   addedDate: todolist!.addedDate,
+  //   id: todolist!.id,
+  // }
+
+  todolistsAPI.updateTodolist(todolistId, title)
+    .then((res) => {
+        dispatch(changeTodolistTitleAC(todolistId, title))
+    })
+}
+
+
+
