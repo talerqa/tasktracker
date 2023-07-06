@@ -1,5 +1,11 @@
 import axios, { AxiosResponse } from 'axios'
 
+export enum Result_code {
+    OK = 0,
+    ERROR = 1,
+    CAPTCHA_ERROR = 10
+}
+
 const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.1/',
     withCredentials: true,
