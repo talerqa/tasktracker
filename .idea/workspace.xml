@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="add: 14 todolist">
-      <change afterPath="$PROJECT_DIR$/src/components/ErrorSnackBar/ErrorSnackBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appReducer.ts" afterDir="false" />
-    </list>
+    <list default="true" id="e42fe5d7-ba4f-4725-b2cc-8b96bae3bbbb" name="Changes" comment="add: 14 error processing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +101,7 @@
       <workItem from="1688224712214" duration="74000" />
       <workItem from="1688224787810" duration="402000" />
       <workItem from="1688655832102" duration="13741000" />
+      <workItem from="1688671079395" duration="42000" />
     </task>
     <task id="LOCAL-00001" summary="add: thunk getTodolists, getTasks, deleteTask, createTask, updateTask">
       <created>1688071317194</created>
@@ -136,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688659337950</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add: 14 error processing">
+      <created>1688671114847</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688671114847</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +160,7 @@
     <MESSAGE value="add: thunk addTodolist, removeTodolist" />
     <MESSAGE value="add: thunk changeTitleTodolist, changeTitleTask" />
     <MESSAGE value="add: 14 todolist" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: 14 todolist" />
+    <MESSAGE value="add: 14 error processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 14 error processing" />
   </component>
 </project>
