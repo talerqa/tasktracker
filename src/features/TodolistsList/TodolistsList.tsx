@@ -70,7 +70,7 @@ export const TodolistsList: React.FC = () => {
         dispatch(thunk)
     }, [dispatch])
 
-    if (!isLoggedIn) return <Navigate to={'/login'}/>
+    if (!isLoggedIn) return <Navigate to={'/todolist/login'}/>
 
     return <>
         <Grid container style={{padding: '20px'}}>

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f391d40-0b4c-4762-bdf4-0ccbbe6bf0da" name="Changes" comment="add: auth">
+    <list default="true" id="8f391d40-0b4c-4762-bdf4-0ccbbe6bf0da" name="Changes" comment="fix: logged">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
@@ -121,7 +120,7 @@
       <workItem from="1688224712214" duration="74000" />
       <workItem from="1688224787810" duration="402000" />
       <workItem from="1689259834987" duration="13795000" />
-      <workItem from="1689278991804" duration="1199000" />
+      <workItem from="1689278991804" duration="1824000" />
     </task>
     <task id="LOCAL-00001" summary="add: thunk getTodolists, getTasks, deleteTask, createTask, updateTask">
       <created>1688071317194</created>
@@ -158,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689276059391</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix: logged">
+      <created>1689280513210</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689280513210</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +187,7 @@
     <MESSAGE value="add: thunk changeTitleTodolist, changeTitleTask" />
     <MESSAGE value="add: update" />
     <MESSAGE value="add: auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: auth" />
+    <MESSAGE value="fix: logged" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: logged" />
   </component>
 </project>
