@@ -4,11 +4,7 @@ const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.1/',
     withCredentials: true,
     headers: {
-<<<<<<< HEAD
-        'API-KEY': '5fc11a34-7258-4926-8c00-915edb4f940c'
-=======
-        'API-KEY': '8f2534e2-22a4-4052-894e-a66c04807482'
->>>>>>> origin/main
+        'API-KEY': '5fc11a34-7258-4926-8c00-91db4f940cfd'
     }
 })
 
@@ -18,11 +14,7 @@ export const todolistsAPI = {
         return instance.get<TodolistType[]>('todo-lists');
     },
     createTodolist(title: string) {
-<<<<<<< HEAD
-        return instance.post<ResponseType<{ item: TodolistType }>, AxiosResponse<ResponseType<{ item: TodolistType }>>,{ title: string }>('todo-lists', {title});
-=======
         return instance.post<ResponseType<{ item: TodolistType }>, AxiosResponse<ResponseType<{ item: TodolistType }>>, { title: string }>('todo-lists', {title});
->>>>>>> origin/main
     },
     deleteTodolist(id: string) {
         return instance.delete<ResponseType>(`todo-lists/${id}`);
@@ -44,15 +36,6 @@ export const todolistsAPI = {
     }
 }
 
-<<<<<<< HEAD
-export enum Result_Code {
-    OK = 0,
-    ERROR = 1,
-    CAPTCHA_ERROR = 10
-}
-
-=======
->>>>>>> origin/main
 // types
 export type TodolistType = {
     id: string
