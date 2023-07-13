@@ -26,7 +26,7 @@ export type LoginType = {
 export const Login = () => {
 
   const dispatch = useAppDispatch()
-  const isLoggedIn = useAppSelector((state) => state.auth)
+  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn)
 
   const formik = useFormik({
     initialValues: {
@@ -44,7 +44,7 @@ export const Login = () => {
 
       if (!values.password) {
         errors.password = 'Required'
-      } else if (values.password.length < 8) {
+      } else if (values.password.length < 4) {
         errors.password = 'Invalid email address'
       }
       return errors
@@ -55,8 +55,7 @@ export const Login = () => {
     },
   })
 
-  if (!isLoggedIn) <Navigate to={'/'}/>
-
+  if (isLoggedIn) return <Navigate to={'/'}/>
 
   return <Grid container justifyContent={'center'}>
     <Grid item justifyContent={'center'}>
