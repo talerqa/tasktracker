@@ -21,11 +21,12 @@ import {Navigate} from 'react-router-dom';
 export const TodolistsList: React.FC = () => {
     const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
     const tasks = useAppSelector<TasksStateType>(state => state.tasks)
-    const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn)
     const dispatch = useAppDispatch()
+    const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn)
 
     useEffect(() => {
-        if (!isLoggedIn) return
+
+        if(!isLoggedIn) return;
         const thunk = fetchTodolistsTC()
         dispatch(thunk)
     }, [])
@@ -70,7 +71,7 @@ export const TodolistsList: React.FC = () => {
         dispatch(thunk)
     }, [dispatch])
 
-    if (!isLoggedIn) return <Navigate to={'/todolist/login'}/>
+    if(!isLoggedIn) return <Navigate to={'/login'}/>
 
     return <>
         <Grid container style={{padding: '20px'}}>

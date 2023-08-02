@@ -8,25 +8,29 @@ import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from 'formik';
-import {loginTC} from './authReducer';
 import {useAppDispatch, useAppSelector} from '../../app/store';
+import {loginTC} from './authReducer';
+import {useSelector} from 'react-redux';
 import {Navigate} from 'react-router-dom';
 
-type ErrorType = {
+type FormikErrorType = {
   email?: string
   password?: string
+
 }
 
 export type LoginType = {
-  email: string,
-  password: string,
+  email: string
+  password: string
   rememberMe: boolean
 }
 
 export const Login = () => {
 
   const dispatch = useAppDispatch()
-  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn)
+
+
+  const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn)
 
   const formik = useFormik({
     initialValues: {
@@ -35,7 +39,7 @@ export const Login = () => {
       rememberMe: false
     },
     validate: (values) => {
-      const errors: ErrorType = {}
+      const errors: FormikErrorType = {}
       if (!values.email) {
         errors.email = 'Required'
       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -45,17 +49,18 @@ export const Login = () => {
       if (!values.password) {
         errors.password = 'Required'
       } else if (values.password.length < 4) {
-        errors.password = 'Invalid email address'
+        errors.password = 'Please input correct password'
       }
+
       return errors
     },
     onSubmit: values => {
       dispatch(loginTC(values))
-
     },
   })
 
-  if (isLoggedIn) return <Navigate to={'/todolist'}/>
+
+  if(isLoggedIn) return <Navigate to={'/'}/>
 
   return <Grid container justifyContent={'center'}>
     <Grid item justifyContent={'center'}>
@@ -70,40 +75,27 @@ export const Login = () => {
           <p>Email: free@samuraijs.com</p>
           <p>Password: free</p>
         </FormLabel>
-
         <form onSubmit={formik.handleSubmit}>
           <FormGroup>
             <TextField label="Email"
-                       margin="normal"
-              //  name="email"
-              // onBlur={formik.handleBlur}
-              // onChange={formik.handleChange}
-              // value={formik.values.email}
                        {...formik.getFieldProps('email')}
-            />
-            {formik.touched.email && formik.errors.email && <div>{formik.errors.email}</div>}
-
+                       margin="normal"/>
+            {formik.touched.email && formik.errors.email ?
+              <div style={{color: 'red'}}>{formik.errors.email}</div> : null}
             <TextField type="password"
                        label="Password"
                        margin="normal"
-              // name="password"
-              // onBlur={formik.handleBlur}
-              // onChange={formik.handleChange}
-              // value={formik.values.password}
                        {...formik.getFieldProps('password')}
-            />
-            {formik.touched.password && formik.errors.password &&
-              <div style={{color: 'red'}}>{formik.errors.password}</div>}
 
+            />
+            {formik.touched.password && formik.errors.password ?
+              <div style={{color: 'red'}}>{formik.errors.password}</div> : null}
             <FormControlLabel label={'Remember me'}
-                              control={<Checkbox
-                                checked={formik.values.rememberMe}
-                                {...formik.getFieldProps('rememberMe')}
-                                // name="rememberMe"
-                                // onChange={formik.handleChange}
-                                // value={formik.values.rememberMe}
+                              control={<Checkbox checked={formik.values.rememberMe}{...formik.getFieldProps('rememberMe')}
                               />}/>
-            <Button type={'submit'} variant={'contained'} color={'primary'}>
+            <Button type={'submit'}
+                    variant={'contained'}
+                    color={'primary'}>
               Login
             </Button>
           </FormGroup>
