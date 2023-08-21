@@ -1,46 +1,41 @@
-import {TaskType} from '../Todolist';
-import {v1} from 'uuid';
-
+import { TaskType } from "../Todolist";
+import { v1 } from "uuid";
 
 export const tasksReducer = (state: TaskType[], action: CommonType) => {
   switch (action.type) {
-    case  'REMOVE-TASK' : {
-      return state.filter(t => t.id !== action.payload.id);
+    case "REMOVE-TASK": {
+      return state.filter((t) => t.id !== action.payload.id);
     }
-    case 'ADD-TASKS': {
-      let task = {id: v1(), title: action.payload.title, isDone: false};
+    case "ADD-TASKS": {
+      let task = { id: v1(), title: action.payload.title, isDone: false };
       let newTasks = [task, ...state];
-      return newTasks
+      return newTasks;
     }
     default:
-      return state
+      return state;
   }
-}
+};
 
-
-type CommonType = RemoveTaskACType | AddTaskACType
-type RemoveTaskACType = ReturnType<typeof removeTaskAC>
+type CommonType = RemoveTaskACType | AddTaskACType;
+type RemoveTaskACType = ReturnType<typeof removeTaskAC>;
 export const removeTaskAC = (id: string) => {
   return {
-    type: 'REMOVE-TASK',
+    type: "REMOVE-TASK",
     payload: {
       id,
-    }
-  } as const
-}
+    },
+  } as const;
+};
 
-type AddTaskACType = ReturnType<typeof addTasksAC>
+type AddTaskACType = ReturnType<typeof addTasksAC>;
 export const addTasksAC = (title: string) => {
   return {
-    type: 'ADD-TASKS',
+    type: "ADD-TASKS",
     payload: {
-      title
-    }
-  } as const
-}
-
-
-
+      title,
+    },
+  } as const;
+};
 
 // import {TaskType} from "../Todolist";
 // import {v1} from "uuid";

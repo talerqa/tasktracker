@@ -16,7 +16,6 @@
 
 .task {
   font-weight: bold;
-
 }
 
 .task-isDone {
@@ -28,7 +27,6 @@
   border-radius: 2px;
   padding: 3px 10px;
   border: 1px solid white;
-
 }
 
 .filter-btn-active {
@@ -60,4 +58,3 @@ h2 {
   border: 2px solid red;
   outline: none;
 }
-
