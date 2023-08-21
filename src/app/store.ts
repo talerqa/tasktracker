@@ -7,9 +7,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { todolistsReducer } from "features/TodolistsList/todolists-reducer";
 
 
-// объединяя reducer-ы с помощью combineReducers,
-// мы задаём структуру нашего единственного объекта-состояния
-
 // непосредственно создаём store
 // export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 //

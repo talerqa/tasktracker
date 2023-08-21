@@ -4,6 +4,7 @@ import { authAPI, LoginParamsType } from "api/todolists-api";
 import { handleServerAppError, handleServerNetworkError } from "utils/error-utils";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk } from "app/store";
+import { clearTaskAndTodolists } from "features/TodolistsList/common.action";
 
 
 const slice = createSlice({
@@ -47,6 +48,7 @@ export const logoutTC = (): AppThunk => (dispatch: Dispatch) => {
       if (res.data.resultCode === 0) {
         dispatch(authActions.setIsLoggedIn({ isLoggedIn: false }));
         dispatch(appActions.setAppStatus({ status: "succeeded" }));
+        dispatch(clearTaskAndTodolists({tasks: {}, todolists: []}));
       } else {
         handleServerAppError(res.data, dispatch);
       }

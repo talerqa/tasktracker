@@ -3,7 +3,8 @@ import { Dispatch } from "redux";
 import { appActions, RequestStatusType } from "app/app-reducer";
 import { handleServerNetworkError } from "utils/error-utils";
 import { AppThunk } from "app/store";
-import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { clearTaskAndTodolists } from "features/TodolistsList/common.action";
 
 
 const slice = createSlice({
@@ -33,7 +34,15 @@ const slice = createSlice({
       setTodolists: (state, action: PayloadAction<{ todolists: Array<TodolistType> }>) => {
         return action.payload.todolists.map((tl: TodolistType) => ({ ...tl, filter: "all", entityStatus: "idle" }));
       }
+    },
+    extraReducers: (builder) => {
+      builder
+        .addCase(clearTaskAndTodolists, (state, action: PayloadAction<clearTaskAndTodolists>) => {
+          return action.payload.todolists
+        });
     }
+
+
   })
 ;
 
