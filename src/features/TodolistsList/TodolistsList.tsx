@@ -81,7 +81,7 @@ export const TodolistsList: React.FC<PropsType> = ({ demo = false }) => {
   );
 
   if (!isLoggedIn) {
-    return <Navigate to={"/login"} />;
+    return <Navigate to={"/todolist/login"} />;
   }
 
   return (
