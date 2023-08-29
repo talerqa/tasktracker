@@ -120,7 +120,6 @@ const updateTask = createAppAsyncThunk<UpdateTaskArgThunk, UpdateTaskArgThunk>(
   "task/updateTask",
   async (arg, thunkAPI) => {
     const { dispatch, rejectWithValue, getState } = thunkAPI;
-
     try {
       dispatch(appActions.setAppStatus({ status: "loading" }));
       const state = getState();
@@ -129,7 +128,6 @@ const updateTask = createAppAsyncThunk<UpdateTaskArgThunk, UpdateTaskArgThunk>(
         dispatch(appActions.setAppError({ error: "Task not found" }));
         return rejectWithValue(null);
       }
-
       const apiModel: UpdateTaskModelType = {
         deadline: task.deadline,
         description: task.description,
@@ -160,7 +158,6 @@ export const tasksReducer = slice.reducer;
 export const tasksActions = slice.actions;
 export const tasksThunks = { fetchTasks, addTask, updateTask, removeTask };
 
-// types
 export type UpdateDomainTaskModelType = {
   title?: string;
   description?: string;
