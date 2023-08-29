@@ -4,7 +4,7 @@ import { TodolistsList } from "features/TodolistsList/TodolistsList";
 import { ErrorSnackbar } from "components/ErrorSnackbar/ErrorSnackbar";
 import { useSelector } from "react-redux";
 import { initializeAppTC } from "app/app.reducer";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Login } from "features/auth/Login";
 import { logoutTC } from "features/auth/auth.reducer";
 import {
@@ -69,6 +69,7 @@ function App({ demo = false }: PropsType) {
         </AppBar>
         <Container fixed>
           <Routes>
+            <Route path={"/todolist"} element={<TodolistsList demo={demo} />} />
             <Route path={"/"} element={<TodolistsList demo={demo} />} />
             <Route path={"/login"} element={<Login />} />
           </Routes>
