@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="ref: fetch tasks thunk">
-      <change afterPath="$PROJECT_DIR$/src/utils/createAsyncThunk.ts" afterDir="false" />
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="ref: addTask thunk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/error-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,7 @@
       <workItem from="1692863766457" duration="2667000" />
       <workItem from="1693291874641" duration="120000" />
       <workItem from="1693292018533" duration="236000" />
-      <workItem from="1693292403590" duration="6635000" />
+      <workItem from="1693292403590" duration="11678000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -184,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693293957817</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ref: addTask thunk">
+      <created>1693300710598</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693300710598</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +219,7 @@
     <MESSAGE value="ref: add file app.selectors include all selector" />
     <MESSAGE value="fix: path todolist" />
     <MESSAGE value="ref: fetch tasks thunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: fetch tasks thunk" />
+    <MESSAGE value="ref: addTask thunk" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref: addTask thunk" />
   </component>
 </project>

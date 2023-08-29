@@ -96,20 +96,24 @@ test("correct task should be deleted from correct array", () => {
 
 test("correct task should be added to correct array", () => {
   //const action = addTaskAC("juce", "todolistId2");
-  const action = tasksThunks.addTask.fulfilled({
-    task: {
-      todoListId: "todolistId2",
-      title: "juce",
-      status: TaskStatuses.New,
-      addedDate: "",
-      deadline: "",
-      description: "",
-      order: 0,
-      priority: 0,
-      startDate: "",
-      id: "id exists"
-    }
-  }, "requestId", { todolistId: "todolistId2", title: "juce" });
+
+  const task = {
+    todoListId: "todolistId2",
+    title: "juce",
+    status: TaskStatuses.New,
+    addedDate: "",
+    deadline: "",
+    description: "",
+    order: 0,
+    priority: 0,
+    startDate: "",
+    id: "id exists"
+  };
+
+  const action = tasksThunks.addTask.fulfilled({ task }, "requestId", {
+    todolistId: task.todoListId,
+    title: task.title
+  });
 
   const endState = tasksReducer(startState, action);
 
@@ -121,9 +125,12 @@ test("correct task should be added to correct array", () => {
 });
 
 test("status of specified task should be changed", () => {
-  const action = tasksActions.updateTask({
+  const action = tasksThunks.updateTask.fulfilled({
     taskId: "2",
     model: { status: TaskStatuses.New },
+    todolistId: "todolistId2"
+  }, "requestId", {
+    taskId: "2", model: { status: TaskStatuses.New },
     todolistId: "todolistId2"
   });
 
@@ -134,7 +141,11 @@ test("status of specified task should be changed", () => {
 });
 
 test("title of specified task should be changed", () => {
-  const action = tasksActions.updateTask({ taskId: "2", model: { title: "yogurt" }, todolistId: "todolistId2" });
+  const action = tasksThunks.updateTask.fulfilled({
+      taskId: "2", model: { title: "yogurt" }, todolistId: "todolistId2"
+    },
+    "requestId",
+    { taskId: "2", model: { title: "yogurt" }, todolistId: "todolistId2" });
 
   const endState = tasksReducer(startState, action);
 
