@@ -1,7 +1,7 @@
 import { v1 } from "uuid";
 import { AddTodolistActionType, RemoveTodolistActionType } from "./todolists-reducer";
 import { TasksStateType } from "../App";
-import { TaskPriorities, TaskStatus, TaskType } from "../../src/api/tasks-api";
+import { TaskPriorities, TaskStatus, TaskType } from "../../src/common/api/tasks-api";
 
 export type RemoveTaskActionType = {
   type: "REMOVE-TASK";
@@ -107,7 +107,7 @@ export const addTaskAC = (title: string, todolistId: string): AddTaskActionType 
 export const changeTaskStatusAC = (
   taskId: string,
   status: TaskStatus,
-  todolistId: string,
+  todolistId: string
 ): ChangeTaskStatusActionType => {
   return { type: "CHANGE-TASK-STATUS", status, todolistId, taskId };
 };

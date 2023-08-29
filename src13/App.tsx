@@ -22,7 +22,7 @@ import {
 import { addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC } from "./state/tasks-reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { AppRootStateType } from "./state/store";
-import { TaskStatus, TaskType } from "../src/api/tasks-api";
+import { TaskStatus, TaskType } from "../src/common/api/tasks-api";
 
 export type TasksStateType = {
   [key: string]: Array<TaskType>;
@@ -73,7 +73,7 @@ function App() {
       const action = addTodolistAC(title);
       dispatch(action);
     },
-    [dispatch],
+    [dispatch]
   );
 
   return (

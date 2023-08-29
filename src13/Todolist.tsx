@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { Delete } from "@mui/icons-material";
 import { Task } from "./Task";
-import { TaskStatus, TaskType } from "../src/api/tasks-api";
+import { TaskStatus, TaskType } from "../src/common/api/tasks-api";
 import { FilterValuesType } from "./state/todolists-reducer";
 
 type PropsType = {
@@ -29,7 +29,7 @@ export const Todolist = React.memo(function (props: PropsType) {
     (title: string) => {
       props.addTask(title, props.id);
     },
-    [props.addTask, props.id],
+    [props.addTask, props.id]
   );
 
   const removeTodolist = () => {
@@ -39,17 +39,17 @@ export const Todolist = React.memo(function (props: PropsType) {
     (title: string) => {
       props.changeTodolistTitle(props.id, title);
     },
-    [props.id, props.changeTodolistTitle],
+    [props.id, props.changeTodolistTitle]
   );
 
   const onAllClickHandler = useCallback(() => props.changeFilter("all", props.id), [props.id, props.changeFilter]);
   const onActiveClickHandler = useCallback(
     () => props.changeFilter("active", props.id),
-    [props.id, props.changeFilter],
+    [props.id, props.changeFilter]
   );
   const onCompletedClickHandler = useCallback(
     () => props.changeFilter("completed", props.id),
-    [props.id, props.changeFilter],
+    [props.id, props.changeFilter]
   );
 
   let tasksForTodolist = props.tasks;

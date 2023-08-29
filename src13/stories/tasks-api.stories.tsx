@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { tasksApi } from "../../src/api/tasks-api";
+import { tasksApi } from "../../src/common/api/tasks-api";
 
 export default {
   title: "API",

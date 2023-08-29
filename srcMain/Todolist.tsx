@@ -1,6 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { FilterValuesType } from "./App";
-import { EditableSpan } from "../src/Components/EditableSpan";
+import { EditableSpan } from "../src/common/components/EditableSpan";
 /*import todoList from '../srcViktor/TodoList';*/
 
 export type TaskType = {
