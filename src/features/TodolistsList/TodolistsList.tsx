@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import {
-  addTodolistTC,
   changeTodolistTitleTC,
   FilterValuesType,
   todolistsActions,
@@ -65,13 +64,7 @@ export const TodolistsList: React.FC<PropsType> = ({ demo = false }) => {
     dispatch(thunk);
   }, []);
 
-  const addTodolist = useCallback(
-    (title: string) => {
-      const thunk = addTodolistTC(title);
-      dispatch(thunk);
-    },
-    [dispatch]
-  );
+  const addTodolist = useCallback((title: string) => dispatch(todolistThunk.addTodolist(title)), [dispatch]);
 
   if (!isLoggedIn) {
     return <Navigate to={"/login"} />;
