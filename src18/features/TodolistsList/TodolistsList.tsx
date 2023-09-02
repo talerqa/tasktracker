@@ -1,71 +1,64 @@
 import React, { useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { FilterValuesType, todolistsActions, todolistsThunks } from "features/TodolistsList/todolists.reducer";
+import { FilterValuesType, todolistsActions, todolistThunk } from "features/TodolistsList/todolists.reducer";
 import { tasksThunks } from "features/TodolistsList/tasks.reducer";
 import { Grid, Paper } from "@mui/material";
-import { AddItemForm } from "common/components";
 import { Todolist } from "./Todolist/Todolist";
 import { Navigate } from "react-router-dom";
+import { useAppDispatch } from "common/hooks/useAppDispatch";
 import { selectIsLoggedIn } from "features/auth/auth.selectors";
 import { selectTasks } from "features/TodolistsList/tasks.selectors";
 import { selectTodolists } from "features/TodolistsList/todolists.selectors";
-import { TaskStatuses } from "common/enums";
-import { useActions } from "common/hooks/useActions";
+import { AddItemForm } from "common/components";
+import { TaskStatuses } from "common/utils/enums/enums";
 
-export const TodolistsList = () => {
+type PropsType = {
+  demo?: boolean;
+};
+
+export const TodolistsList: React.FC<PropsType> = ({ demo = false }) => {
   const todolists = useSelector(selectTodolists);
   const tasks = useSelector(selectTasks);
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  // const dispatch = useAppDispatch();
-
-  const {
-    fetchTodolists: fetchTodolistsThunk,
-    removeTodolist: removeTodolistThunk,
-    addTodolist: addTodolistThunk,
-    changeTodolistTitle: changeTodolistTitleThunk,
-  } = useActions(todolistsThunks);
-  const { changeTodolistFilter: changeFilterThunk } = useActions(todolistsActions);
-  const { removeTask: removeTaskThunk, addTask: addTaskThunk, updateTask: updateTaskThunk } = useActions(tasksThunks);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (demo || !isLoggedIn) {
       return;
     }
-    fetchTodolistsThunk();
+    dispatch(todolistThunk.fetchTodolists());
   }, []);
 
   const removeTask = useCallback(function (taskId: string, todolistId: string) {
-    removeTaskThunk({ taskId, todolistId });
+    dispatch(tasksThunks.removeTask({ taskId, todolistId }));
   }, []);
 
   const addTask = useCallback(function (title: string, todolistId: string) {
-    addTaskThunk({ title, todolistId });
+    dispatch(tasksThunks.addTask({ title, todolistId }));
   }, []);
 
   const changeStatus = useCallback(function (taskId: string, status: TaskStatuses, todolistId: string) {
-    updateTaskThunk({ taskId, domainModel: { status }, todolistId });
+    dispatch(tasksThunks.updateTask({ taskId, todolistId, model: { status } }));
   }, []);
 
   const changeTaskTitle = useCallback(function (taskId: string, title: string, todolistId: string) {
-    updateTaskThunk({ taskId, domainModel: { title }, todolistId });
+    dispatch(tasksThunks.updateTask({ taskId, model: { title }, todolistId }));
   }, []);
 
   const changeFilter = useCallback(function (filter: FilterValuesType, id: string) {
-    changeFilterThunk({ id, filter });
+    dispatch(todolistsActions.changeTodolistFilter({ id, filter }));
   }, []);
 
   const removeTodolist = useCallback(function (id: string) {
-    removeTodolistThunk(id);
+    dispatch(todolistThunk.removeTodolist(id));
   }, []);
 
   const changeTodolistTitle = useCallback(function (id: string, title: string) {
-    changeTodolistTitleThunk({ id, title });
+    dispatch(todolistThunk.changeTodolistTitle({ id, title }));
   }, []);
 
-  const addTodolist = useCallback((title: string) => {
-    addTodolistThunk(title);
-  }, []);
+  const addTodolist = useCallback((title: string) => dispatch(todolistThunk.addTodolist(title)), [dispatch]);
 
   if (!isLoggedIn) {
     return <Navigate to={"/login"} />;
@@ -93,6 +86,7 @@ export const TodolistsList = () => {
                   removeTodolist={removeTodolist}
                   changeTaskTitle={changeTaskTitle}
                   changeTodolistTitle={changeTodolistTitle}
+                  demo={demo}
                 />
               </Paper>
             </Grid>
