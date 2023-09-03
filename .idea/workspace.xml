@@ -5,97 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="ref: refactoring Thunk, add: useAction">
-      <change afterPath="$PROJECT_DIR$/src/common/actions/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/api/common.api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/api/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/hooks/useActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/app/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/app/app.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/app/app.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/app/app.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/app/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/actions/common.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/api/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/hooks/useAppDispatch.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/types/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/types/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/utils/createAsyncThunk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/utils/enums/enums.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/utils/handleServerAppError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/utils/handleServerNetworkError.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/common/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/Todolist/Todolist.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/taskApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/taskApi.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/tasks.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/tasks.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/todolistApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/todolistApi.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/todolists-tasks.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/todolists.reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/todolists.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/TodolistsList/todolists.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/auth/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/auth/auth.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/auth/auth.selectors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/features/auth/authApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src18/serviceWorker.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/api/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/types/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/createAsyncThunk.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/enums/enums.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/handleServerAppError.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/handleServerNetworkError.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/taskApi.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/taskApi.types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolistApi.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolistApi.types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists-tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists-tasks.reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/authApi.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src18/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src18/app/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src18/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src18/features/TodolistsList/Todolist/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/Todolist.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/api/todolist-api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src18/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src18/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src18/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/state/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/state/tasks-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/state/todolists-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/stories/tasks-api.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src13/stories/todolists-api.stories.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,6 +140,8 @@
       <workItem from="1693579381505" duration="6734000" />
       <workItem from="1693586604033" duration="2000000" />
       <workItem from="1693588657921" duration="6072000" />
+      <workItem from="1693683571919" duration="654000" />
+      <workItem from="1693733458141" duration="2584000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -342,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693330241359</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ref: refactoring Thunk, add: useAction">
+      <created>1693683625200</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1693683625200</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

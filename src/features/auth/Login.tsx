@@ -16,16 +16,20 @@ export const Login = () => {
 
   const formik = useFormik({
     validate: (values) => {
+      // const errors: FormikErrorType = {};
       // if (!values.email) {
-      //   return {
-      //     email: "Email is required",
-      //   };
+      //   errors.email = "Required";
+      // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+      //   errors.email = "Invalid email address";
       // }
+      //
       // if (!values.password) {
-      //   return {
-      //     password: "Password is required",
-      //   };
+      //   errors.password = "Required";
+      // } else if (values.password.length < 4) {
+      //   errors.password = "Please input correct password";
       // }
+      //
+      // return errors;
     },
     initialValues: {
       email: "",
@@ -36,8 +40,18 @@ export const Login = () => {
       await dispatch(authThunks.login(values))
         .unwrap()
         .catch((reason: BaseResponseType) => {
-          reason.fieldsErrors?.forEach((fieldsErrors) => {
-            formikHelpers.setFieldError(fieldsErrors.field, fieldsErrors.error);
+          reason.fieldsErrors.forEach((fieldError) => {
+            if (!values.email) {
+              formikHelpers.setFieldError("email", fieldError.error);
+            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+              formikHelpers.setFieldError("email", "Invalid email address");
+            }
+
+            if (!values.password) {
+              formikHelpers.setFieldError("password", fieldError.error);
+            } else if (values.password.length < 4) {
+              formikHelpers.setFieldError("password", "Please input correct password that more 4 symbol");
+            }
           });
         });
     },
