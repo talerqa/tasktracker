@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: validation form for password and email">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: validation form for password and email when form untouched">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +145,7 @@
       <workItem from="1693586604033" duration="2000000" />
       <workItem from="1693588657921" duration="6072000" />
       <workItem from="1693683571919" duration="654000" />
-      <workItem from="1693733458141" duration="7692000" />
+      <workItem from="1693733458141" duration="10474000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -269,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693736239751</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add: validation form for password and email when form untouched">
+      <created>1693741534441</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1693741534441</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +316,7 @@
     <MESSAGE value="ref: changeTodolistTitle thunk" />
     <MESSAGE value="ref: refactoring Thunk, add: useAction" />
     <MESSAGE value="add: validation form for password and email" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: validation form for password and email" />
+    <MESSAGE value="add: validation form for password and email when form untouched" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: validation form for password and email when form untouched" />
   </component>
 </project>

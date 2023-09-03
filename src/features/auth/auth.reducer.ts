@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { appActions } from "app/app.reducer";
 import { authAPI, LoginParamsType } from "features/auth/auth.api";
 import { clearTasksAndTodolists } from "common/actions";
-import { createAppAsyncThunk, handleServerAppError, handleServerNetworkError, thunkTryCatch } from "common/utils";
+import { createAppAsyncThunk, handleServerAppError, thunkTryCatch } from "common/utils";
 import { BaseResponseType } from "common/types";
 
 const slice = createSlice({
@@ -31,8 +31,8 @@ const login = createAppAsyncThunk<{ isLoggedIn: boolean }, LoginParamsType, { re
   "auth/login",
   async (arg, thunkAPI) => {
     const { dispatch, rejectWithValue } = thunkAPI;
-    try {
-      dispatch(appActions.setAppStatus({ status: "loading" }));
+
+    return thunkTryCatch(thunkAPI, async () => {
       const res = await authAPI.login(arg);
       if (res.data.resultCode === 0) {
         dispatch(appActions.setAppStatus({ status: "succeeded" }));
@@ -42,18 +42,13 @@ const login = createAppAsyncThunk<{ isLoggedIn: boolean }, LoginParamsType, { re
         handleServerAppError(res.data, dispatch, isShowAppError);
         return rejectWithValue(res.data);
       }
-    } catch (error) {
-      handleServerNetworkError(error, dispatch);
-      return rejectWithValue(null);
-    }
+    });
   }
 );
 
 const logout = createAppAsyncThunk<{ isLoggedIn: boolean }, undefined>("auth/logout", async (arg, thunkAPI) => {
   const { dispatch, rejectWithValue } = thunkAPI;
-
-  try {
-    dispatch(appActions.setAppStatus({ status: "loading" }));
+  return thunkTryCatch(thunkAPI, async () => {
     const res = await authAPI.logout();
     if (res.data.resultCode === 0) {
       dispatch(clearTasksAndTodolists());
@@ -64,10 +59,7 @@ const logout = createAppAsyncThunk<{ isLoggedIn: boolean }, undefined>("auth/log
       dispatch(appActions.setAppStatus({ status: "failed" }));
       return rejectWithValue(null);
     }
-  } catch (error) {
-    handleServerNetworkError(error, dispatch);
-    return rejectWithValue(null);
-  }
+  });
 });
 
 const initializeApp = createAppAsyncThunk<{ isLoggedIn: boolean }, undefined>(
