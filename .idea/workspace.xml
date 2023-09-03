@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="ref: refactoring Thunk, add: useAction">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: validation form for password and email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/Login.tsx" afterDir="false" />
     </list>
@@ -141,7 +141,7 @@
       <workItem from="1693586604033" duration="2000000" />
       <workItem from="1693588657921" duration="6072000" />
       <workItem from="1693683571919" duration="654000" />
-      <workItem from="1693733458141" duration="2584000" />
+      <workItem from="1693733458141" duration="7692000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -262,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693683625200</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add: validation form for password and email">
+      <created>1693736239751</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1693736239751</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +304,7 @@
     <MESSAGE value="ref: addTodolist thunk" />
     <MESSAGE value="ref: changeTodolistTitle thunk" />
     <MESSAGE value="ref: refactoring Thunk, add: useAction" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: refactoring Thunk, add: useAction" />
+    <MESSAGE value="add: validation form for password and email" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: validation form for password and email" />
   </component>
 </project>

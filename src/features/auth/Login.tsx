@@ -9,6 +9,12 @@ import { LoginParamsType } from "features/auth/auth.api";
 import { authThunks } from "features/auth/auth.reducer";
 import { BaseResponseType } from "common/types";
 
+type FormikErrorType = {
+  email?: string;
+  password?: string;
+  rememberMe?: boolean;
+};
+
 export const Login = () => {
   const dispatch = useAppDispatch();
 
@@ -16,42 +22,32 @@ export const Login = () => {
 
   const formik = useFormik({
     validate: (values) => {
-      // const errors: FormikErrorType = {};
-      // if (!values.email) {
-      //   errors.email = "Required";
-      // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      //   errors.email = "Invalid email address";
-      // }
-      //
-      // if (!values.password) {
-      //   errors.password = "Required";
-      // } else if (values.password.length < 4) {
-      //   errors.password = "Please input correct password";
-      // }
-      //
-      // return errors;
+      const errors: FormikErrorType = {};
+      if (!values.email) {
+        errors.email = "Email is required";
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = "Invalid email address";
+      }
+
+      if (!values.password) {
+        errors.password = "Required";
+      } else if (values.password.length < 3) {
+        errors.password = "Must be 3 characters or more";
+      }
+
+      return errors;
     },
     initialValues: {
       email: "",
       password: "",
       rememberMe: false,
     },
-    onSubmit: async (values, formikHelpers: FormikHelpers<LoginParamsType>) => {
+    onSubmit: async (values: LoginParamsType, formikHelpers: FormikHelpers<LoginParamsType>) => {
       await dispatch(authThunks.login(values))
         .unwrap()
         .catch((reason: BaseResponseType) => {
-          reason.fieldsErrors.forEach((fieldError) => {
-            if (!values.email) {
-              formikHelpers.setFieldError("email", fieldError.error);
-            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-              formikHelpers.setFieldError("email", "Invalid email address");
-            }
-
-            if (!values.password) {
-              formikHelpers.setFieldError("password", fieldError.error);
-            } else if (values.password.length < 4) {
-              formikHelpers.setFieldError("password", "Please input correct password that more 4 symbol");
-            }
+          reason.fieldsErrors?.forEach((fieldError) => {
+            formikHelpers.setFieldError(fieldError.field, fieldError.error);
           });
         });
     },
@@ -79,9 +75,14 @@ export const Login = () => {
             </FormLabel>
             <FormGroup>
               <TextField label="Email" margin="normal" {...formik.getFieldProps("email")} />
-              {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+              {formik.touched.email && formik.errors.email ? (
+                <div style={{ color: "red" }}>{formik.errors.email}</div>
+              ) : null}
+
               <TextField type="password" label="Password" margin="normal" {...formik.getFieldProps("password")} />
-              {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+              {formik.touched.password && formik.errors.password ? (
+                <div style={{ color: "red" }}>{formik.errors.password}</div>
+              ) : null}
               <FormControlLabel
                 label={"Remember me"}
                 control={<Checkbox {...formik.getFieldProps("rememberMe")} checked={formik.values.rememberMe} />}
