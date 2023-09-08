@@ -5,15 +5,12 @@ import { createAppAsyncThunk, handleServerAppError, thunkTryCatch } from "common
 import { ResultCode } from "common/enums";
 import { clearTasksAndTodolists } from "common/actions";
 
-const fetchTodolists = createAppAsyncThunk<{ todolists: TodolistType[] }, void>(
-  "todo/fetchTodolists",
-  async (_, thunkAPI) => {
-    return thunkTryCatch(thunkAPI, async () => {
-      const res = await todolistsApi.getTodolists();
-      return { todolists: res.data };
-    });
-  }
-);
+const fetchTodolists = createAppAsyncThunk<{ todolists: TodolistType[] }, void>("todo/fetchTodolists", async (_) => {
+  // return thunkTryCatch(thunkAPI, async () => {
+  const res = await todolistsApi.getTodolists();
+  return { todolists: res.data };
+  //  });
+});
 
 const addTodolist = createAppAsyncThunk<{ todolist: TodolistType }, string>(
   "todo/addTodolist",
@@ -24,8 +21,7 @@ const addTodolist = createAppAsyncThunk<{ todolist: TodolistType }, string>(
       if (res.data.resultCode === ResultCode.Success) {
         return { todolist: res.data.data.item };
       } else {
-        handleServerAppError(res.data, dispatch);
-        return rejectWithValue(null);
+        return rejectWithValue(res.data);
       }
     });
   }

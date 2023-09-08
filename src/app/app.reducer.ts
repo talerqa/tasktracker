@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
+import { todolistsThunks } from "features/TodolistsList/model/todolists/todolists.reducer";
 
 const initialState = {
   status: "idle" as RequestStatusType,
@@ -23,6 +24,42 @@ const slice = createSlice({
       state.isInitialized = action.payload.isInitialized;
     },
   },
+  extraReducers: (builder) =>
+    builder
+      .addMatcher(
+        (action) => {
+          return action.type.endsWith("/pending");
+        },
+
+        (state, action) => {
+          state.status = "loading";
+        }
+      )
+      .addMatcher(
+        (action) => {
+          return action.type.endsWith("/rejected");
+        },
+
+        (state, action) => {
+          state.status = "failed";
+
+          if (isAnyOf(todolistsThunks.addTodolist.rejected)) return;
+          if (action.payload) {
+            state.error = action.payload.messages[0];
+          } else {
+            state.error = action.error.message ? action.error.message : "Some error occurred";
+          }
+        }
+      )
+      .addMatcher(
+        (action) => {
+          return action.type.endsWith("/fulfilled");
+        },
+
+        (state, action) => {
+          state.status = "succeeded";
+        }
+      ),
 });
 
 export const appReducer = slice.reducer;

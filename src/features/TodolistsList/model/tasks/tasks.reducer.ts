@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { appActions } from "app/app.reducer";
-import { todolistsThunks } from "features/TodolistsList/model/todolists.reducer";
+import { todolistsThunks } from "features/TodolistsList/model/todolists/todolists.reducer";
 import {
   AddTaskArgType,
   RemoveTaskArgType,
@@ -32,8 +32,7 @@ const addTask = createAppAsyncThunk<{ task: TaskType }, AddTaskArgType>("tasks/a
       const task = res.data.data.item;
       return { task };
     } else {
-      handleServerAppError(res.data, dispatch);
-      return rejectWithValue(null);
+      return rejectWithValue(res.data);
     }
   });
 });
