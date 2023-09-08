@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import {
   AppBar,
   Button,
@@ -14,7 +14,7 @@ import {
 import { Menu } from "@mui/icons-material";
 import { Login } from "features/auth/ui/login/login";
 import "./App.css";
-import { TodolistsList } from "features/TodolistsList/TodolistsList";
+import { TodolistsList } from "features/TodolistsList/ui/TodolistsList";
 import { ErrorSnackbar } from "common/components";
 import { useActions } from "common/hooks";
 import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <ErrorSnackbar />
         <AppBar position="static">
@@ -67,7 +67,7 @@ function App() {
           </Routes>
         </Container>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
