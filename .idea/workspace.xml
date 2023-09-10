@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: todolist.api and tasks.api">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="ref: name files, name props">
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -154,7 +152,7 @@
       <workItem from="1694189178685" duration="217000" />
       <workItem from="1694189453364" duration="11311000" />
       <workItem from="1694288101893" duration="9000" />
-      <workItem from="1694364555270" duration="4218000" />
+      <workItem from="1694364555270" duration="4600000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -338,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694368090976</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="ref: name files, name props">
+      <created>1694369107138</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1694369107138</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +362,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add: login, logout" />
     <MESSAGE value="fix: bug logout delete data about todolist and task; bug show task, when all todolists uploaded" />
     <MESSAGE value="add: redux toolkit app-reducer an auth-reducer" />
     <MESSAGE value="add: redux toolkit in todolist and tasks reducers" />
@@ -382,6 +386,7 @@
     <MESSAGE value="add: addMatcher" />
     <MESSAGE value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
     <MESSAGE value="add: todolist.api and tasks.api" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: todolist.api and tasks.api" />
+    <MESSAGE value="ref: name files, name props" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref: name files, name props" />
   </component>
 </project>
