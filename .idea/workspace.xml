@@ -4,27 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: remove unuse files and folders">
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/FilterTasksButtons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Tasks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: addMatcher">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks.selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.selectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists-tasks.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists-tasks.reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists.selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.selectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Task/Task.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +156,9 @@
       <workItem from="1694187997798" duration="1063000" />
       <workItem from="1694189160500" duration="14000" />
       <workItem from="1694189178685" duration="217000" />
-      <workItem from="1694189453364" duration="9296000" />
+      <workItem from="1694189453364" duration="11311000" />
+      <workItem from="1694288101893" duration="9000" />
+      <workItem from="1694364555270" duration="2534000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -331,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694191377178</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add: addMatcher">
+      <created>1694199203535</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1694199203535</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,6 +369,7 @@
     <MESSAGE value="ref: rewrite on useAction instead of useAppDispatch" />
     <MESSAGE value="ref: folder and files, add: 20" />
     <MESSAGE value="fix: remove unuse files and folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: remove unuse files and folders" />
+    <MESSAGE value="add: addMatcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: addMatcher" />
   </component>
 </project>
