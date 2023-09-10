@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from "react";
 import { TodolistDomainType } from "features/TodolistsList/model/todolists/todolists.reducer";
 import { tasksThunks } from "features/TodolistsList/model/tasks/tasks.reducer";
-import { TaskType } from "features/TodolistsList/api/todolists.api";
 import { useActions } from "common/hooks";
 import { AddItemForm } from "common/components";
 import { FilterTasksButtons } from "features/TodolistsList/ui/Todolist/FilterTasksButtons";
 import { Tasks } from "features/TodolistsList/ui/Todolist/Tasks/Tasks";
 import { TodolistTitle } from "features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle";
+import { TaskType } from "features/TodolistsList/api/tasks.api";
 
 type Props = {
   todolist: TodolistDomainType;
