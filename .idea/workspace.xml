@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError">
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/api/tasks.api.ts" afterDir="false" />
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: todolist.api and tasks.api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/api/todolists.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/api/todolists.api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Tasks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +154,7 @@
       <workItem from="1694189178685" duration="217000" />
       <workItem from="1694189453364" duration="11311000" />
       <workItem from="1694288101893" duration="9000" />
-      <workItem from="1694364555270" duration="3228000" />
+      <workItem from="1694364555270" duration="4218000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -335,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694367346921</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add: todolist.api and tasks.api">
+      <created>1694368090976</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1694368090976</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,6 +381,7 @@
     <MESSAGE value="fix: remove unuse files and folders" />
     <MESSAGE value="add: addMatcher" />
     <MESSAGE value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
+    <MESSAGE value="add: todolist.api and tasks.api" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: todolist.api and tasks.api" />
   </component>
 </project>

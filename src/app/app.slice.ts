@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
-import { todolistsThunks } from "features/TodolistsList/model/todolists/todolists.reducer";
+import { todolistsThunks } from "features/TodolistsList/model/todolists/todolists.slice";
 
 const initialState = {
   status: "idle" as RequestStatusType,
@@ -58,5 +58,5 @@ const slice = createSlice({
       ),
 });
 
-export const appReducer = slice.reducer;
+export const appSlice = slice.reducer;
 export const appActions = slice.actions;

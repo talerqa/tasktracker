@@ -1,10 +1,9 @@
-import React, { FC, KeyboardEvent, useState } from "react";
+import React, { FC } from "react";
 import { EditableSpan } from "common/components";
 import { IconButton } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import { useActions } from "common/hooks";
-import { TodolistDomainType, todolistsThunks } from "features/TodolistsList/model/todolists/todolists.reducer";
-import { RejectValueType } from "common/utils/create-app-async-thunk";
+import { TodolistDomainType, todolistsThunks } from "features/TodolistsList/model/todolists/todolists.slice";
 
 type Props = {
   todolist: TodolistDomainType;
@@ -12,7 +11,6 @@ type Props = {
 
 export const TodolistTitle: FC<Props> = ({ todolist }) => {
   const { title, id, entityStatus } = todolist;
-  let [error, setError] = useState<string | null>(null);
   const { removeTodolist, changeTodolistTitle } = useActions(todolistsThunks);
 
   const removeTodolistHandler = () => {
@@ -20,21 +18,9 @@ export const TodolistTitle: FC<Props> = ({ todolist }) => {
   };
 
   const changeTodolistTitleHandler = (title: string) => {
-    if (title.trim() !== "") {
-      changeTodolistTitle({ title, id })
-        .unwrap()
-        .then(() => {})
-        .catch((err: RejectValueType) => {
-          if (err.data) {
-            const messages = err.data.messages;
-            setError(messages.length ? messages[0] : "Some error occurred");
-          }
-        });
-    } else {
-      setError("Title is required");
-    }
+    changeTodolistTitle({ title, id });
   };
-  //
+
   return (
     <>
       <h3>

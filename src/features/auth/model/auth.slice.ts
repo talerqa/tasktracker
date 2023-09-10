@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { appActions } from "app/app.reducer";
+import { appActions } from "app/app.slice";
 import { authAPI, LoginParamsType } from "features/auth/api/auth.api";
 import { clearTasksAndTodolists } from "common/actions";
 import { createAppAsyncThunk } from "common/utils";

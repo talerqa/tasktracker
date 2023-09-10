@@ -1,12 +1,13 @@
 import React, { ChangeEvent, useState } from "react";
 import { TextField } from "@mui/material";
+import { RejectValueType } from "common/utils/create-app-async-thunk";
 
-type EditableSpanPropsType = {
+type Props = {
   value: string;
   onChange: (newValue: string) => void;
 };
 
-export const EditableSpan = React.memo(function (props: EditableSpanPropsType) {
+export const EditableSpan = React.memo(function (props: Props) {
   let [editMode, setEditMode] = useState(false);
   let [title, setTitle] = useState(props.value);
 
@@ -18,6 +19,7 @@ export const EditableSpan = React.memo(function (props: EditableSpanPropsType) {
     setEditMode(false);
     props.onChange(title);
   };
+
   const changeTitle = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.currentTarget.value);
   };
