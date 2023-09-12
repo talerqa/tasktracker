@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="ref: name files, name props">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: image captcha in Login component">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Routing/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Routing/Routing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/actions/common.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/actions/common.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/lib/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/lib/useLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/Login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +162,10 @@
       <workItem from="1694189178685" duration="217000" />
       <workItem from="1694189453364" duration="11311000" />
       <workItem from="1694288101893" duration="9000" />
-      <workItem from="1694364555270" duration="4600000" />
+      <workItem from="1694364555270" duration="7130000" />
+      <workItem from="1694450543833" duration="8000" />
+      <workItem from="1694450650304" duration="5000" />
+      <workItem from="1694509766251" duration="8735000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -343,7 +356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694369107138</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="ref: add component from app component">
+      <created>1694369262522</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1694369262522</updated>
+    </task>
+    <task id="LOCAL-00029" summary="ref: add component Rounting from App component">
+      <created>1694369392632</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1694369392632</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,9 +389,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: bug logout delete data about todolist and task; bug show task, when all todolists uploaded" />
-    <MESSAGE value="add: redux toolkit app-reducer an auth-reducer" />
-    <MESSAGE value="add: redux toolkit in todolist and tasks reducers" />
     <MESSAGE value="add: clearTaskAndTodolists extraReducer" />
     <MESSAGE value="ref: add file app.selectors include all selector" />
     <MESSAGE value="fix: path todolist" />
@@ -387,6 +411,9 @@
     <MESSAGE value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
     <MESSAGE value="add: todolist.api and tasks.api" />
     <MESSAGE value="ref: name files, name props" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: name files, name props" />
+    <MESSAGE value="ref: add component from app component" />
+    <MESSAGE value="ref: add component Rounting from App component" />
+    <MESSAGE value="add: image captcha in Login component" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: image captcha in Login component" />
   </component>
 </project>
