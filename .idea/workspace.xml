@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: logout todolist hide captcha image">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: error captcha">
+      <change afterPath="$PROJECT_DIR$/src/app/Error/Error.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/actions/common.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/actions/common.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/lib/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/lib/useLogin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Routing/Routing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Routing/Routing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +162,7 @@
       <workItem from="1694364555270" duration="7130000" />
       <workItem from="1694450543833" duration="8000" />
       <workItem from="1694450650304" duration="5000" />
-      <workItem from="1694509766251" duration="9714000" />
+      <workItem from="1694509766251" duration="15514000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -370,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694522804368</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix: error captcha">
+      <created>1694523930538</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1694523930538</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +400,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ref: add file app.selectors include all selector" />
     <MESSAGE value="fix: path todolist" />
     <MESSAGE value="ref: fetch tasks thunk" />
     <MESSAGE value="ref: addTask thunk" />
@@ -414,6 +424,7 @@
     <MESSAGE value="ref: add component Rounting from App component" />
     <MESSAGE value="add: image captcha in Login component" />
     <MESSAGE value="fix: logout todolist hide captcha image" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: logout todolist hide captcha image" />
+    <MESSAGE value="fix: error captcha" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: error captcha" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
 import { selectTasks } from "features/TodolistsList/model/tasks/tasks.selectors";
 import { selectTodolists } from "features/TodolistsList/model/todolists/todolists.selectors";
 import { Todolist } from "features/TodolistsList/ui/Todolist/Todolist";
+import { tasksThunks } from "features/TodolistsList/model/tasks/tasks.slice";
 
 export const TodolistsList = () => {
   const todolists = useSelector(selectTodolists);
@@ -17,13 +18,18 @@ export const TodolistsList = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const { addTodolist: addTodolistThunk, fetchTodolists } = useActions(todolistsThunks);
+  const { fetchTasks } = useActions(tasksThunks);
+  useEffect(() => {
+    console.log(isLoggedIn, "isLoggedIn");
+    if (!isLoggedIn) return;
+    fetchTodolists();
+  }, [isLoggedIn]);
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      return;
-    }
-    fetchTodolists();
-  }, []);
+    todolists.forEach((todolist) => {
+      fetchTasks(todolist.id);
+    });
+  }, [todolists]);
 
   const addTodolist = useCallback((title: string) => {
     return addTodolistThunk(title).unwrap();

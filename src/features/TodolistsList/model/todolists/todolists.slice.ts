@@ -7,6 +7,7 @@ import { clearTasksAndTodolists } from "common/actions";
 
 const fetchTodolists = createAppAsyncThunk<{ todolists: TodolistType[] }, void>("todo/fetchTodolists", async (_) => {
   const res = await todolistsApi.getTodolists();
+  console.log("todolists", res.data);
   return { todolists: res.data };
 });
 

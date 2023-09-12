@@ -14,16 +14,12 @@ type Props = {
 };
 
 export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
-  const { fetchTasks, addTask } = useActions(tasksThunks);
-
-  useEffect(() => {
-    fetchTasks(todolist.id);
-  }, []);
+  const { addTask } = useActions(tasksThunks);
 
   const addTaskCallBack = (title: string) => {
     return addTask({ title, todolistId: todolist.id }).unwrap();
   };
-
+  console.log("TASKS IN COMPONENT", tasks);
   return (
     <div>
       <TodolistTitle todolist={todolist} />

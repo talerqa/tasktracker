@@ -17,6 +17,7 @@ const fetchTasks = createAppAsyncThunk<{ tasks: TaskType[]; todolistId: string }
   "tasks/fetchTasks",
   async (todolistId, thunkAPI) => {
     const res = await tasksApi.getTasks(todolistId);
+    console.log("tasksArray", res.data);
     const tasks = res.data.items;
     return { tasks, todolistId };
   }
