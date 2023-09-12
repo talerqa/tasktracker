@@ -25,11 +25,11 @@ export const TodolistsList = () => {
     fetchTodolists();
   }, [isLoggedIn]);
 
-  useEffect(() => {
-    todolists.forEach((todolist) => {
-      fetchTasks(todolist.id);
-    });
-  }, []);
+  // useEffect(() => {
+  //   todolists.forEach((todolist) => {
+  //     fetchTasks(todolist.id);
+  //   });
+  // }, []);
 
   const addTodolist = useCallback((title: string) => {
     return addTodolistThunk(title).unwrap();
