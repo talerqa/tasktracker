@@ -43,7 +43,10 @@ export const TodolistTitle: FC<Props> = ({ todolist }) => {
 
   return (
     <div>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <IconButton onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave}>
+          <InfoSharpIcon fontSize="small" />
+        </IconButton>
         <div style={{ width: "90%", height: "35px" }}>
           {showDateCreate && (
             <Fade in={showDateCreate}>
@@ -51,18 +54,13 @@ export const TodolistTitle: FC<Props> = ({ todolist }) => {
             </Fade>
           )}
         </div>
-        <IconButton onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave}>
-          <InfoSharpIcon fontSize="small" />
-        </IconButton>
-      </div>
-      {/*<h4 style={{ fontWeight: "700", justifySelf: "center", margin: "0", padding: "5px", fontSize: "14px" }}>*/}
-      {/*  Created: {finishedData}*/}
-      {/*</h4>*/}
-      <div style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
-        <EditableSpan value={title} onChange={changeTodolistTitleHandler} />
+
         <IconButton onClick={removeTodolistHandler} disabled={entityStatus === "loading"}>
           <Delete />
         </IconButton>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <EditableSpan value={title} onChange={changeTodolistTitleHandler} />
       </div>
     </div>
   );

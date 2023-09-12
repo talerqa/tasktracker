@@ -32,7 +32,3 @@ export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
     </div>
   );
 });
-
-const DataAddTodolist = () => {
-  return <div></div>;
-};

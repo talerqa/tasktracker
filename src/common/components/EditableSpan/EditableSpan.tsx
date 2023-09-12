@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
 import { TextField } from "@mui/material";
-import { RejectValueType } from "common/utils/create-app-async-thunk";
 
 type Props = {
   value: string;
@@ -27,6 +26,11 @@ export const EditableSpan = React.memo(function (props: Props) {
   return editMode ? (
     <TextField value={title} onChange={changeTitle} autoFocus onBlur={activateViewMode} />
   ) : (
-    <span onDoubleClick={activateEditMode}>{props.value}</span>
+    <p
+      style={{ fontWeight: "700", justifySelf: "center", margin: "0", fontSize: "15px" }}
+      onDoubleClick={activateEditMode}
+    >
+      {props.value}
+    </p>
   );
 });
