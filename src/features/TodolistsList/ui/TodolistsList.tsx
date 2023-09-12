@@ -19,8 +19,8 @@ export const TodolistsList = () => {
 
   const { addTodolist: addTodolistThunk, fetchTodolists } = useActions(todolistsThunks);
   const { fetchTasks } = useActions(tasksThunks);
+
   useEffect(() => {
-    console.log(isLoggedIn, "isLoggedIn");
     if (!isLoggedIn) return;
     fetchTodolists();
   }, [isLoggedIn]);
@@ -29,7 +29,7 @@ export const TodolistsList = () => {
     todolists.forEach((todolist) => {
       fetchTasks(todolist.id);
     });
-  }, [todolists]);
+  }, []);
 
   const addTodolist = useCallback((title: string) => {
     return addTodolistThunk(title).unwrap();

@@ -30,7 +30,7 @@ export const Header: FC<Props> = () => {
             </Button>
           )}
         </Toolbar>
-        {status === "loading" && <LinearProgress />}
+        <div style={{ height: "5px" }}>{status === "loading" && <LinearProgress />}</div>
       </AppBar>
     </div>
   );

@@ -19,7 +19,7 @@ export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
   const addTaskCallBack = (title: string) => {
     return addTask({ title, todolistId: todolist.id }).unwrap();
   };
-  console.log("TASKS IN COMPONENT", tasks);
+
   return (
     <div>
       <TodolistTitle todolist={todolist} />
