@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-import { AppBar, Button, IconButton, LinearProgress, Toolbar, Typography } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { AppBar, Button, LinearProgress, Toolbar, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectAppStatus } from "app/app.selectors";
 import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
@@ -19,11 +18,11 @@ export const Header: FC<Props> = () => {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <Menu />
-          </IconButton>
-          <Typography variant="h6">News</Typography>
+        <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
+          {/*<IconButton edge="start" color="inherit" aria-label="menu">*/}
+          {/*  <Menu />*/}
+          {/*</IconButton>*/}
+          <Typography variant="h6">My todolists</Typography>
           {isLoggedIn && (
             <Button color="inherit" onClick={logoutHandler}>
               Log out

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { TodolistDomainType } from "features/TodolistsList/model/todolists/todolists.slice";
 import { tasksThunks } from "features/TodolistsList/model/tasks/tasks.slice";
 import { useActions } from "common/hooks";
@@ -23,6 +23,7 @@ export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
   return (
     <div>
       <TodolistTitle todolist={todolist} />
+      {/*<DataAddTodolist />*/}
       <AddItemForm addItem={addTaskCallBack} disabled={todolist.entityStatus === "loading"} />
       <Tasks todolist={todolist} tasks={tasks} />
       <div style={{ paddingTop: "10px" }}>
@@ -31,3 +32,7 @@ export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
     </div>
   );
 });
+
+const DataAddTodolist = () => {
+  return <div></div>;
+};
