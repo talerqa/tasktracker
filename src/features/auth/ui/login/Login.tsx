@@ -53,6 +53,7 @@ export const Login = () => {
                 <>
                   <img src={`${captcha}`} alt="" />
                   <TextField label="captcha" margin="normal" {...formik.getFieldProps("captcha")} />
+                  <p className={s.error}>{formik.errors.captcha}</p>
                 </>
               )}
             </FormGroup>

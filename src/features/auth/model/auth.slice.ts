@@ -39,7 +39,7 @@ const login = createAppAsyncThunk<{ isLoggedIn: boolean }, LoginParamsType>("aut
     return { isLoggedIn: true };
   } else if (res.data.resultCode === ResultCode.Captcha) {
     dispatch(getCaptcha());
-    return { isLoggedIn: false };
+    return rejectWithValue({ data: res.data, showGlobalError: true });
   } else {
     return rejectWithValue({ data: res.data, showGlobalError: true });
   }
@@ -57,7 +57,7 @@ const logout = createAppAsyncThunk<{ isLoggedIn: boolean }, void>("auth/logout",
   }
 });
 
-const getCaptcha = createAppAsyncThunk<{ captcha: string }, void>("auth/captcha", async (_) => {
+const getCaptcha = createAppAsyncThunk<{ captcha: string }, void>("auth/captcha", async (_, thunkAPI) => {
   const res = await authAPI.getCaptcha();
   return { captcha: res.data.url };
 });
@@ -69,7 +69,7 @@ const initializeApp = createAppAsyncThunk<{ isLoggedIn: boolean }, void>("app/in
     if (res.data.resultCode === ResultCode.Success) {
       return { isLoggedIn: true };
     } else {
-      return rejectWithValue(null);
+      return { isLoggedIn: false };
     }
   } catch (e) {
     return rejectWithValue(null);
