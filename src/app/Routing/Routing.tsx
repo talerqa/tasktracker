@@ -7,7 +7,7 @@ import { Error } from "app/Error/Error";
 
 export const Routing = () => {
   return (
-    <Container fixed>
+    <Container fixed style={{ margin: "0 auto" }}>
       <Routes>
         <Route path={"/error404"} element={<Error />} />
         <Route path="/" element={<TodolistsList />} />

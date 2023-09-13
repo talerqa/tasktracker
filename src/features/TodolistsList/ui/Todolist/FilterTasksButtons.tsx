@@ -21,7 +21,7 @@ export const FilterTasksButtons: FC<Props> = ({ todolist }) => {
     });
 
   return (
-    <>
+    <div style={{ margin: "0 auto", display: "flex", justifyContent: "space-between" }}>
       <Button
         variant={todolist.filter === "all" ? "outlined" : "text"}
         onClick={() => changeTodolistFilterHandler("all")}
@@ -43,6 +43,6 @@ export const FilterTasksButtons: FC<Props> = ({ todolist }) => {
       >
         Completed
       </Button>
-    </>
+    </div>
   );
 };

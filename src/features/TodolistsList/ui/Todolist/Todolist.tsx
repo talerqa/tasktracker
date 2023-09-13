@@ -7,8 +7,7 @@ import { FilterTasksButtons } from "features/TodolistsList/ui/Todolist/FilterTas
 import { Tasks } from "features/TodolistsList/ui/Todolist/Tasks/Tasks";
 import { TodolistTitle } from "features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle";
 import { TaskType } from "features/TodolistsList/api/tasks.api";
-import { Typography } from "@mui/material";
-import InfoSharpIcon from "@mui/icons-material/InfoSharp";
+
 type Props = {
   todolist: TodolistDomainType;
   tasks: TaskType[];

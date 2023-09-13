@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { TextField } from "@mui/material";
 
 type Props = {
@@ -14,9 +14,17 @@ export const EditableSpan = React.memo(function (props: Props) {
     setEditMode(true);
     setTitle(props.value);
   };
+
   const activateViewMode = () => {
     setEditMode(false);
     props.onChange(title);
+  };
+
+  const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.charCode === 13) {
+      setEditMode(false);
+      props.onChange(title);
+    }
   };
 
   const changeTitle = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,10 +32,16 @@ export const EditableSpan = React.memo(function (props: Props) {
   };
 
   return editMode ? (
-    <TextField value={title} onChange={changeTitle} autoFocus onBlur={activateViewMode} />
+    <TextField
+      value={title}
+      onChange={changeTitle}
+      onKeyPress={onKeyPressHandler}
+      autoFocus
+      onBlur={activateViewMode}
+    />
   ) : (
     <p
-      style={{ fontWeight: "700", justifySelf: "center", margin: "0", fontSize: "15px" }}
+      style={{ fontWeight: "inherit", justifySelf: "center", margin: "0", fontSize: "inherit" }}
       onDoubleClick={activateEditMode}
     >
       {props.value}
