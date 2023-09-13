@@ -6,9 +6,7 @@ import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
 import { useActions } from "common/hooks";
 import { authThunks } from "features/auth/model/auth.slice";
 
-type Props = {};
-
-export const Header: FC<Props> = () => {
+export const Header = () => {
   const status = useSelector(selectAppStatus);
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -19,9 +17,6 @@ export const Header: FC<Props> = () => {
     <div>
       <AppBar position="static">
         <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-          {/*<IconButton edge="start" color="inherit" aria-label="menu">*/}
-          {/*  <Menu />*/}
-          {/*</IconButton>*/}
           <Typography variant="h6">MY TODOLISTS</Typography>
           {isLoggedIn && (
             <Button size="large" color="inherit" onClick={logoutHandler}>

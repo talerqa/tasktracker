@@ -9,10 +9,10 @@ export const Routing = () => {
   return (
     <Container fixed style={{ margin: "0 auto" }}>
       <Routes>
-        <Route path={"/error404"} element={<Error />} />
+        <Route path={"/error"} element={<Error />} />
         <Route path="/" element={<TodolistsList />} />
         <Route path={"/login"} element={<Login />} />
-        <Route path="*" element={<Navigate to={"/error404"} />} />
+        <Route path="*" element={<Navigate to={"/error"} />} />
       </Routes>
     </Container>
   );
