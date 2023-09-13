@@ -22,9 +22,9 @@ export const Header: FC<Props> = () => {
           {/*<IconButton edge="start" color="inherit" aria-label="menu">*/}
           {/*  <Menu />*/}
           {/*</IconButton>*/}
-          <Typography variant="h6">My todolists</Typography>
+          <Typography variant="h6">MY TODOLISTS</Typography>
           {isLoggedIn && (
-            <Button color="inherit" onClick={logoutHandler}>
+            <Button size="large" color="inherit" onClick={logoutHandler}>
               Log out
             </Button>
           )}

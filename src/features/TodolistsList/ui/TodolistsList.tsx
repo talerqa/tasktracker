@@ -44,7 +44,7 @@ export const TodolistsList = () => {
       <Grid container style={{ padding: "20px" }}>
         <AddItemForm addItem={addTodolist} />
       </Grid>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} style={{ justifyContent: "space-around" }}>
         {todolists.map((tl) => {
           let allTodolistTasks = tasks[tl.id];
           return (

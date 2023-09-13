@@ -43,7 +43,7 @@ export const AddItemForm = React.memo(function ({ addItem, disabled = false }: P
   };
 
   return (
-    <div style={{ height: "80px", display: "flex" }}>
+    <div style={{ height: "56px", display: "flex", paddingBottom: "20px" }}>
       <TextField
         variant="outlined"
         style={{ width: "270px" }}
@@ -55,9 +55,11 @@ export const AddItemForm = React.memo(function ({ addItem, disabled = false }: P
         label="Title"
         helperText={error}
       />
-      <IconButton color="primary" onClick={addItemHandler} disabled={disabled}>
-        <AddBox />
-      </IconButton>
+      <div style={{ alignSelf: "center" }}>
+        <IconButton color="primary" onClick={addItemHandler} disabled={disabled} style={{ margin: "0" }}>
+          <AddBox fontSize="small" />
+        </IconButton>
+      </div>
     </div>
   );
 });

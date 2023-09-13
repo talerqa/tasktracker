@@ -35,7 +35,7 @@ export const Task: FC<Props> = React.memo(({ task, todolistId }) => {
     <div
       style={{
         display: "flex",
-        fontSize: "18px",
+        fontSize: "20px",
         fontWeight: "400",
         alignItems: "center",
         justifyContent: "space-between",

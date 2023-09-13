@@ -60,7 +60,7 @@ export const TodolistTitle: FC<Props> = ({ todolist }) => {
           paddingBottom: "10px",
         }}
       >
-        <p style={{ margin: "0", fontSize: "20px", fontWeight: "700" }}>
+        <p style={{ margin: "0", fontSize: "22px", fontWeight: "700" }}>
           <EditableSpan value={title} onChange={changeTodolistTitleHandler} />
         </p>
       </div>
