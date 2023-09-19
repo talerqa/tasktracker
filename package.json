@@ -1,5 +1,5 @@
 {
-  "name": "Task Tracker",
+  "name": "task-tracker",
   "jest": {
     "moduleNameMapper": {
       "axios": "axios/dist/node/axios.cjs"
