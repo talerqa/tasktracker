@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="add: error image for path '/error'">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: rename project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +70,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web\it-incubator\1-todolist\public" />
       <recent name="D:\web\it-incubator\1-todolist\src\app\Error" />
       <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model" />
       <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model\tasks" />
       <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model\todolists" />
-      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model\tests" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -161,7 +163,7 @@
       <workItem from="1694509766251" duration="27317000" />
       <workItem from="1694595363313" duration="5093000" />
       <workItem from="1694620426487" duration="11000" />
-      <workItem from="1695151372404" duration="298000" />
+      <workItem from="1695151372404" duration="1345000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -443,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694600472976</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fix: rename project">
+      <option name="closed" value="true" />
+      <created>1695151838967</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1695151838967</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +472,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ref: refactoring Thunk, add: useAction" />
     <MESSAGE value="add: validation form for password and email" />
     <MESSAGE value="add: validation form for password and email when form untouched" />
     <MESSAGE value="ref: rewrite code on thunkTryCatch custom hook" />
@@ -487,6 +496,7 @@
     <MESSAGE value="add: style for todolist and task" />
     <MESSAGE value="fix: style in todolist and task" />
     <MESSAGE value="add: error image for path '/error'" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: error image for path '/error'" />
+    <MESSAGE value="fix: rename project" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: rename project" />
   </component>
 </project>

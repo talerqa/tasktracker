@@ -1,5 +1,5 @@
 {
-  "name": "it-incubator-todolist-ts",
+  "name": "Task Tracker",
   "jest": {
     "moduleNameMapper": {
       "axios": "axios/dist/node/axios.cjs"
@@ -7,7 +7,7 @@
   },
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://talerqa.github.io/todolist",
+  "homepage": "https://talerqa.github.io/tasktracker",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@emotion/react": "^11.10.6",
