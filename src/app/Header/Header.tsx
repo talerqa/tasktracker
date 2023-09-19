@@ -17,7 +17,7 @@ export const Header = () => {
     <div>
       <AppBar position="static">
         <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography variant="h6">MY TODOLISTS</Typography>
+          <Typography variant="h6">Task Tracker</Typography>
           {isLoggedIn && (
             <Button size="large" color="inherit" onClick={logoutHandler}>
               Log out
