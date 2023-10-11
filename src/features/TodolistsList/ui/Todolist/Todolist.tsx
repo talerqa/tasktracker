@@ -6,7 +6,6 @@ import { AddItemForm } from "common/components";
 import { FilterTasksButtons } from "features/TodolistsList/ui/Todolist/FilterTasksButtons";
 import { Tasks } from "features/TodolistsList/ui/Todolist/Tasks/Tasks";
 import { TodolistTitle } from "features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle";
-import { TaskType } from "features/TodolistsList/api/tasks.api";
 import { useSelector } from "react-redux";
 import { selectTasks } from "features/TodolistsList/model/tasks/tasks.selectors";
 

@@ -21,7 +21,7 @@ export const EditableSpan = React.memo(function (props: Props) {
   };
 
   const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.charCode === 13) {
+    if (e.key === "Enter") {
       setEditMode(false);
       props.onChange(title);
     }
@@ -34,8 +34,9 @@ export const EditableSpan = React.memo(function (props: Props) {
   return editMode ? (
     <TextField
       value={title}
+      color="secondary"
       onChange={changeTitle}
-      onKeyPress={onKeyPressHandler}
+      onKeyDown={onKeyPressHandler}
       autoFocus
       onBlur={activateViewMode}
     />
