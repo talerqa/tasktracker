@@ -1,0 +1,31 @@
+.addItemBlock {
+  padding: 10px 10px 15px;
+  margin-bottom: 10px;
+  height: 56px;
+  display: flex;
+  max-width: 300px;
+}
+
+.textField {
+  min-width: 270px;
+}
+
+.iconButtonBlock {
+  align-self: center;
+}
+
+.iconButton {
+  margin: 0;
+}
+
+.textFieldBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  width: 230px;
+  text-align: center;
+  color: red;
+  font-size: 10px;
+}

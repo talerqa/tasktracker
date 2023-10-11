@@ -1,0 +1,20 @@
+.infoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textDate {
+  margin: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dateInfo {
+  width: 90%;
+  height: 35px;
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,5 +1,51 @@
+.form {
+  display: flex;
+  max-width: 300px;
+  min-height: 420px;
+  box-shadow: #5e5e5e 0 0 10px;
+  background-color: rgba(255, 255, 255, 0.82);
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 55px;
+}
+
+.textInfo {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.link {
+  color: #2bc5ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dataText {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.text {
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
 .error {
   color: red;
-  font-weight: bold;
-  margin: 0;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.button {
+
+  cursor: pointer;
+  max-width: 320px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+}
+.formControl {
+  justify-content: center;
 }

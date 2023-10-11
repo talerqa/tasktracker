@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { TodolistDomainType } from "features/TodolistsList/model/todolists/todolists.slice";
 import { tasksThunks } from "features/TodolistsList/model/tasks/tasks.slice";
 import { useActions } from "common/hooks";
@@ -7,14 +7,21 @@ import { FilterTasksButtons } from "features/TodolistsList/ui/Todolist/FilterTas
 import { Tasks } from "features/TodolistsList/ui/Todolist/Tasks/Tasks";
 import { TodolistTitle } from "features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle";
 import { TaskType } from "features/TodolistsList/api/tasks.api";
+import { useSelector } from "react-redux";
+import { selectTasks } from "features/TodolistsList/model/tasks/tasks.selectors";
 
 type Props = {
   todolist: TodolistDomainType;
-  tasks: TaskType[];
 };
 
-export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
-  const { addTask } = useActions(tasksThunks);
+export const Todolist: FC<Props> = React.memo(function ({ todolist }) {
+  const { addTask, fetchTasks } = useActions(tasksThunks);
+
+  const tasks = useSelector(selectTasks);
+
+  useEffect(() => {
+    fetchTasks(todolist.id);
+  }, []);
 
   const addTaskCallBack = (title: string) => {
     return addTask({ title, todolistId: todolist.id }).unwrap();
@@ -24,7 +31,7 @@ export const Todolist: FC<Props> = React.memo(function ({ todolist, tasks }) {
     <div>
       <TodolistTitle todolist={todolist} />
       <AddItemForm addItem={addTaskCallBack} disabled={todolist.entityStatus === "loading"} />
-      <Tasks todolist={todolist} tasks={tasks} />
+      <Tasks todolist={todolist} tasks={tasks[todolist.id]} />
       <div style={{ paddingTop: "10px" }}>
         <FilterTasksButtons todolist={todolist} />
       </div>

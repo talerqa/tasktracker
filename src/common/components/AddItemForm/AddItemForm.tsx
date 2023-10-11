@@ -1,7 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { IconButton, TextField } from "@mui/material";
-import { AddBox } from "@mui/icons-material";
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import { RejectValueType } from "common/utils/create-app-async-thunk";
+import s from "./AddItemForm.module.css";
 
 type Props = {
   addItem: (title: string) => Promise<any>;
@@ -37,27 +38,30 @@ export const AddItemForm = React.memo(function ({ addItem, disabled = false }: P
     if (error !== null) {
       setError(null);
     }
-    if (e.charCode === 13) {
+    if (e.key === "Enter") {
       addItemHandler();
     }
   };
 
   return (
-    <div style={{ height: "56px", display: "flex", paddingBottom: "20px" }}>
-      <TextField
-        variant="outlined"
-        style={{ width: "270px" }}
-        disabled={disabled}
-        error={!!error}
-        value={title}
-        onChange={onChangeHandler}
-        onKeyPress={onKeyPressHandler}
-        label="Title"
-        helperText={error}
-      />
-      <div style={{ alignSelf: "center" }}>
-        <IconButton color="primary" onClick={addItemHandler} disabled={disabled} style={{ margin: "0" }}>
-          <AddBox fontSize="small" />
+    <div className={s.addItemBlock}>
+      <div className={s.textFieldBlock}>
+        <TextField
+          variant="outlined"
+          color="secondary"
+          className={s.textField}
+          disabled={disabled}
+          error={!!error}
+          value={title}
+          onChange={onChangeHandler}
+          onKeyDown={onKeyPressHandler}
+          label="Title"
+        />
+        <span className={s.error}>{error}</span>
+      </div>
+      <div className={s.iconButtonBlock}>
+        <IconButton color="default" onClick={addItemHandler} disabled={disabled} className={s.iconButton}>
+          <ControlPointIcon fontSize="medium" />
         </IconButton>
       </div>
     </div>

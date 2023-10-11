@@ -72,13 +72,12 @@ const addTodolist = createAppAsyncThunk<{ todolist: TodolistType }, string>(
 );
 
 const removeTodolist = createAppAsyncThunk<{ id: string }, string>("todo/removeTodolist", async (id, thunkAPI) => {
-  const { dispatch, rejectWithValue, getState } = thunkAPI;
+  const { dispatch, rejectWithValue } = thunkAPI;
   dispatch(todolistsActions.changeTodolistEntityStatus({ id, entityStatus: "loading" }));
   const res = await todolistsApi.deleteTodolist(id);
   if (res.data.resultCode === ResultCode.Success) {
     return { id };
   } else {
-    debugger;
     return rejectWithValue({ data: res.data, showGlobalError: true });
   }
 });
@@ -87,7 +86,6 @@ const changeTodolistTitle = createAppAsyncThunk<UpdateTodolistTitleArgType, Upda
   "todo/changeTodolistTitle",
   async (arg, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
-
     const res = await todolistsApi.updateTodolist(arg);
     if (res.data.resultCode === ResultCode.Success) {
       return arg;

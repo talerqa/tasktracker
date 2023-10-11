@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: rename project">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: warnings">
+      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -50,8 +60,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/web/it-incubator/1-todolist",
+    "git-widget-placeholder": "fix/styled",
+    "last_opened_file_path": "D:/web/it-incubator/1-todolist/src/features/TodolistsList/ui/Todolist/TodolistTitle",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -66,15 +76,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList" />
-      <recent name="$PROJECT_DIR$/src" />
+      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui\Todolist\TodolistTitle" />
+      <recent name="D:\web\it-incubator\1-todolist\src\common\img" />
+      <recent name="D:\web\it-incubator\1-todolist\public" />
+      <recent name="D:\web\it-incubator\1-todolist\src\app\Header" />
+      <recent name="D:\web\it-incubator\1-todolist\src\common\components\AddItemForm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\web\it-incubator\1-todolist\public" />
+      <recent name="D:\web\it-incubator\1-todolist\src\common\components\AddItemForm" />
+      <recent name="D:\web\it-incubator\1-todolist\src\common\api" />
+      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui" />
       <recent name="D:\web\it-incubator\1-todolist\src\app\Error" />
-      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model" />
-      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model\tasks" />
-      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\model\todolists" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -110,8 +123,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -163,7 +176,14 @@
       <workItem from="1694509766251" duration="27317000" />
       <workItem from="1694595363313" duration="5093000" />
       <workItem from="1694620426487" duration="11000" />
-      <workItem from="1695151372404" duration="1345000" />
+      <workItem from="1695151372404" duration="4998000" />
+      <workItem from="1696317942245" duration="72000" />
+      <workItem from="1696325112113" duration="16547000" />
+      <workItem from="1696344881086" duration="6000" />
+      <workItem from="1697025652472" duration="10000" />
+      <workItem from="1697029912173" duration="1794000" />
+      <workItem from="1697032570324" duration="385000" />
+      <workItem from="1697032980610" duration="17634000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -453,7 +473,47 @@
       <option name="project" value="LOCAL" />
       <updated>1695151838967</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="add: favicon task, fix: homepage in package.json">
+      <option name="closed" value="true" />
+      <created>1695152800531</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1695152800531</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fix: package.json">
+      <option name="closed" value="true" />
+      <created>1695152834621</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1695152834621</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix: style components">
+      <option name="closed" value="true" />
+      <created>1697037751561</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1697037751561</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fix: bug when delete todolist, add: style on components">
+      <option name="closed" value="true" />
+      <created>1697049185731</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1697049185732</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix: warnings">
+      <option name="closed" value="true" />
+      <created>1697049405909</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1697049405909</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,11 +532,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add: validation form for password and email" />
-    <MESSAGE value="add: validation form for password and email when form untouched" />
-    <MESSAGE value="ref: rewrite code on thunkTryCatch custom hook" />
-    <MESSAGE value="ref: rewrite on useAction instead of useAppDispatch" />
-    <MESSAGE value="ref: folder and files, add: 20" />
     <MESSAGE value="fix: remove unuse files and folders" />
     <MESSAGE value="add: addMatcher" />
     <MESSAGE value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
@@ -497,6 +552,11 @@
     <MESSAGE value="fix: style in todolist and task" />
     <MESSAGE value="add: error image for path '/error'" />
     <MESSAGE value="fix: rename project" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: rename project" />
+    <MESSAGE value="add: favicon task, fix: homepage in package.json" />
+    <MESSAGE value="fix: package.json" />
+    <MESSAGE value="fix: style components" />
+    <MESSAGE value="fix: bug when delete todolist, add: style on components" />
+    <MESSAGE value="fix: warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: warnings" />
   </component>
 </project>

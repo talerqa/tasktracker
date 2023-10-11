@@ -26,7 +26,7 @@ const slice = createSlice({
       .addCase(getCaptcha.fulfilled, (state, action) => {
         state.captcha = action.payload.captcha;
       })
-      .addCase(clearCaptcha, (state, action) => {
+      .addCase(clearCaptcha, (state, _) => {
         state.captcha = "";
       });
   },
@@ -57,7 +57,7 @@ const logout = createAppAsyncThunk<{ isLoggedIn: boolean }, void>("auth/logout",
   }
 });
 
-const getCaptcha = createAppAsyncThunk<{ captcha: string }, void>("auth/captcha", async (_, thunkAPI) => {
+const getCaptcha = createAppAsyncThunk<{ captcha: string }, void>("auth/captcha", async () => {
   const res = await authAPI.getCaptcha();
   return { captcha: res.data.url };
 });
@@ -69,7 +69,6 @@ const initializeApp = createAppAsyncThunk<{ isLoggedIn: boolean }, void>("app/in
     if (res.data.resultCode === ResultCode.Success) {
       return { isLoggedIn: true };
     } else {
-      debugger;
       return rejectWithValue({ data: res.data, showGlobalError: false });
     }
   } catch (e) {
