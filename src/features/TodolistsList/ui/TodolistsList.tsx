@@ -29,7 +29,7 @@ export const TodolistsList = () => {
     todolists.forEach((todolist) => {
       fetchTasks(todolist.id);
     });
-  }, [todolists]);
+  }, []);
 
   const addTodolist = useCallback((title: string) => {
     return addTodolistThunk(title).unwrap();
@@ -52,9 +52,7 @@ export const TodolistsList = () => {
           return (
             <Grid item key={tl.id}>
               <Paper style={{ padding: "10px" }}>
-                <div>
-                  <Todolist todolist={tl} tasks={allTodolistTasks} />
-                </div>
+                <Todolist todolist={tl} tasks={allTodolistTasks} />
               </Paper>
             </Grid>
           );

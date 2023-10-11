@@ -27,15 +27,29 @@
 }
 
 .button {
-  background-color: red;
-  width: 150px;
-  font-weight: 900;
+  background-color: #A2A2A223;
+  border: 1px solid black;
+  font-weight: 700;
   color: rgb(0, 0, 0);
 }
 
-.addtodolistblock {
-  margin: 0px auto;
-  padding: 10px;
-  justify-content: center;
+@media (max-width: 415px) {
+  .logo {
+    width: 35px;
+    height: auto;
+  }
 
+  .title {
+    font-weight: inherit;
+    color: inherit;
+    font-size: 14px;
+    width: 145px;
+  }
+
+  .button {
+    width: 140px ;
+    font-size: 12px!important;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+  }
 }

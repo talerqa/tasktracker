@@ -69,7 +69,6 @@ const initializeApp = createAppAsyncThunk<{ isLoggedIn: boolean }, void>("app/in
     if (res.data.resultCode === ResultCode.Success) {
       return { isLoggedIn: true };
     } else {
-      debugger;
       return rejectWithValue({ data: res.data, showGlobalError: false });
     }
   } catch (e) {

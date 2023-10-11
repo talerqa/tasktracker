@@ -22,30 +22,31 @@ export const Header = () => {
         <Toolbar className={s.toolBar}>
           <a className={s.logoInfo} href="#">
             <img className={s.logo} src={img} alt="logo" />
-            <Typography variant="h6" className={s.title} fontWeight="900">
+            <Typography variant="h6" className={s.title} fontWeight="700">
               Task Tracker
             </Typography>
           </a>
           {isLoggedIn && (
-            <>
-              <Button
-                style={{
-                  backgroundColor: "#A2A2A223",
-                  border: "1px solid black",
-                  fontWeight: "700",
-                  color: "rgb(0, 0, 0)",
-                }}
-                variant="outlined"
-                size="large"
-                onClick={logoutHandler}
-                className={s.button}
-              >
-                Log out
-              </Button>
-            </>
+            <Button
+              style={{
+                fontSize: "16px",
+                backgroundColor: "#A2A2A223",
+                border: "1px solid black",
+                fontWeight: "600",
+                color: "rgb(0, 0, 0)",
+              }}
+              variant="outlined"
+              size="large"
+              onClick={logoutHandler}
+              className={s.button}
+            >
+              Log out
+            </Button>
           )}
         </Toolbar>
-        <div style={{ height: "5px" }}>{status === "loading" && <LinearProgress />}</div>
+        <div style={{ height: "5px", color: "grey.500" }}>
+          {status === "loading" && <LinearProgress color="inherit" />}
+        </div>
       </AppBar>
     </div>
   );

@@ -1,4 +1,3 @@
-
 .todolistlistBlock {
   margin: 0 auto;
   max-width: 1026px;
@@ -8,7 +7,6 @@
   margin: 0 auto;
   padding: 10px;
   justify-content: center;
-
 }
 
 .todolists {
@@ -18,6 +16,8 @@
 
 @media (max-width: 1200px) {
   .todolists {
+    margin: 0 auto;
+    align-items: center;
     justify-content: center;
   }
 }
