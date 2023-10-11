@@ -12,7 +12,6 @@ import img from "./../../common/img/logo.png";
 export const Header = () => {
   const status = useSelector(selectAppStatus);
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const { addTodolist: addTodolistThunk } = useActions(todolistsThunks);
   const { logout } = useActions(authThunks);
 
   const logoutHandler = () => logout();

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, DragEvent } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { todolistsThunks } from "features/TodolistsList/model/todolists/todolists.slice";
 import { Grid, Paper } from "@mui/material";

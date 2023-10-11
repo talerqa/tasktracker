@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: style components">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.module.css" afterDir="false" />
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: bug when delete todolist, add: style on components">
       <change beforePath="$PROJECT_DIR$/src/app/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistList.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/lib/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/lib/useLogin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/Login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +178,7 @@
       <workItem from="1697025652472" duration="10000" />
       <workItem from="1697029912173" duration="1794000" />
       <workItem from="1697032570324" duration="385000" />
-      <workItem from="1697032980610" duration="12915000" />
+      <workItem from="1697032980610" duration="13239000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -502,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697037751561</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fix: bug when delete todolist, add: style on components">
+      <option name="closed" value="true" />
+      <created>1697049185731</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1697049185732</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ref: rewrite on useAction instead of useAppDispatch" />
     <MESSAGE value="ref: folder and files, add: 20" />
     <MESSAGE value="fix: remove unuse files and folders" />
     <MESSAGE value="add: addMatcher" />
@@ -546,6 +543,7 @@
     <MESSAGE value="add: favicon task, fix: homepage in package.json" />
     <MESSAGE value="fix: package.json" />
     <MESSAGE value="fix: style components" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: style components" />
+    <MESSAGE value="fix: bug when delete todolist, add: style on components" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: bug when delete todolist, add: style on components" />
   </component>
 </project>
