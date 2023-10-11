@@ -6,18 +6,14 @@ import { AddItemForm } from "common/components";
 import { Navigate } from "react-router-dom";
 import { useActions } from "common/hooks";
 import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
-import { selectTasks } from "features/TodolistsList/model/tasks/tasks.selectors";
 import { selectTodolists } from "features/TodolistsList/model/todolists/todolists.selectors";
 import { Todolist } from "features/TodolistsList/ui/Todolist/Todolist";
-import { tasksThunks } from "features/TodolistsList/model/tasks/tasks.slice";
 import s from "./TodolistList.module.css";
 
 export const TodolistsList = () => {
-  const tasks = useSelector(selectTasks);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const todolists = useSelector(selectTodolists);
   const { addTodolist: addTodolistThunk, fetchTodolists } = useActions(todolistsThunks);
-  const { fetchTasks } = useActions(tasksThunks);
 
   useEffect(() => {
     if (!isLoggedIn) return;

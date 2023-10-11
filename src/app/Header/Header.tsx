@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Button, LinearProgress, Toolbar, Typography } from "@mui/material";
+import { Button, LinearProgress, Toolbar, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectAppStatus } from "app/app.selectors";
 import { selectIsLoggedIn } from "features/auth/model/auth.selectors";

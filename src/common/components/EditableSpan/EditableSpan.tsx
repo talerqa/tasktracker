@@ -1,5 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { TextField } from "@mui/material";
+import s from "./Editablespan.module.css";
 
 type Props = {
   value: string;
@@ -41,10 +42,7 @@ export const EditableSpan = React.memo(function (props: Props) {
       onBlur={activateViewMode}
     />
   ) : (
-    <p
-      style={{ fontWeight: "inherit", justifySelf: "center", margin: "0", fontSize: "inherit" }}
-      onDoubleClick={activateEditMode}
-    >
+    <p className={s.editableSpan} onDoubleClick={activateEditMode}>
       {props.value}
     </p>
   );
