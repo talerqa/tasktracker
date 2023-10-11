@@ -1,7 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { IconButton, TextField } from "@mui/material";
-import { AddBox } from "@mui/icons-material";
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import { RejectValueType } from "common/utils/create-app-async-thunk";
+import s from "./AddItemForm.module.css";
 
 type Props = {
   addItem: (title: string) => Promise<any>;
@@ -43,10 +44,11 @@ export const AddItemForm = React.memo(function ({ addItem, disabled = false }: P
   };
 
   return (
-    <div style={{ height: "56px", display: "flex", paddingBottom: "20px" }}>
+    <div className={s.addItemBlock}>
       <TextField
         variant="outlined"
-        style={{ width: "270px" }}
+        color="secondary"
+        className={s.textField}
         disabled={disabled}
         error={!!error}
         value={title}
@@ -55,9 +57,9 @@ export const AddItemForm = React.memo(function ({ addItem, disabled = false }: P
         label="Title"
         helperText={error}
       />
-      <div style={{ alignSelf: "center" }}>
-        <IconButton color="primary" onClick={addItemHandler} disabled={disabled} style={{ margin: "0" }}>
-          <AddBox fontSize="small" />
+      <div className={s.iconButtonBlock}>
+        <IconButton color="default" onClick={addItemHandler} disabled={disabled} className={s.iconButton}>
+          <ControlPointIcon fontSize="medium" />
         </IconButton>
       </div>
     </div>

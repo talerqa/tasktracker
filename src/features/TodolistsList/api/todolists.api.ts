@@ -14,9 +14,20 @@ export const todolistsApi = {
   updateTodolist(arg: UpdateTodolistTitleArgType) {
     return instance.put<BaseResponseType>(`todo-lists/${arg.id}`, { title: arg.title });
   },
+  reorder(arg: ReorderType) {
+    return instance.put<BaseResponseType>(`todo-lists/${arg.id}/reorder`, {
+      putAfterItemId: arg.id,
+    });
+  },
 };
 
 // Types
+export type ReorderType = {
+  id: any;
+  order: number;
+  putAfterItemId: string;
+};
+
 export type TodolistType = {
   id: string;
   title: string;

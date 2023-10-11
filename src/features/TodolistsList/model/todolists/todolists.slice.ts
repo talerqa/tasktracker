@@ -47,6 +47,19 @@ const slice = createSlice({
           todo.title = action.payload.title;
         }
       })
+      .addCase(reorderTodolist.fulfilled, (state, action) => {
+        const startWishListOrder = action.payload.currentWishList.order;
+        const leaveWishListOrder = action.payload.leaveWishList.order;
+        debugger;
+        return state.map((el) => {
+          if (el.id === action.payload.currentWishList.id) {
+            return { ...el, order: leaveWishListOrder };
+          } else if (el.id === action.payload.leaveWishList.id) return { ...el, order: startWishListOrder };
+          else {
+            return el;
+          }
+        });
+      })
       .addCase(clearTasksAndTodolists, () => {
         return [];
       });
@@ -72,13 +85,12 @@ const addTodolist = createAppAsyncThunk<{ todolist: TodolistType }, string>(
 );
 
 const removeTodolist = createAppAsyncThunk<{ id: string }, string>("todo/removeTodolist", async (id, thunkAPI) => {
-  const { dispatch, rejectWithValue, getState } = thunkAPI;
+  const { dispatch, rejectWithValue } = thunkAPI;
   dispatch(todolistsActions.changeTodolistEntityStatus({ id, entityStatus: "loading" }));
   const res = await todolistsApi.deleteTodolist(id);
   if (res.data.resultCode === ResultCode.Success) {
     return { id };
   } else {
-    debugger;
     return rejectWithValue({ data: res.data, showGlobalError: true });
   }
 });
@@ -87,7 +99,6 @@ const changeTodolistTitle = createAppAsyncThunk<UpdateTodolistTitleArgType, Upda
   "todo/changeTodolistTitle",
   async (arg, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
-
     const res = await todolistsApi.updateTodolist(arg);
     if (res.data.resultCode === ResultCode.Success) {
       return arg;
@@ -97,9 +108,23 @@ const changeTodolistTitle = createAppAsyncThunk<UpdateTodolistTitleArgType, Upda
   }
 );
 
+const reorderTodolist = createAppAsyncThunk<any, any>("todo/reorderTodolist", async (arg, thunkAPI) => {
+  const { rejectWithValue, getState } = thunkAPI;
+  const state = getState().todolists.find((todo) => todo.id === arg.id);
+  debugger;
+  const res = await todolistsApi.reorder(arg);
+  if (res.data.resultCode === ResultCode.Success) {
+    return {
+      leaveWishList: state,
+      currentWishList: state,
+    };
+  } else {
+    return rejectWithValue({ data: res.data, showGlobalError: true });
+  }
+});
 export const todolistsSlice = slice.reducer;
 export const todolistsActions = slice.actions;
-export const todolistsThunks = { fetchTodolists, addTodolist, removeTodolist, changeTodolistTitle };
+export const todolistsThunks = { fetchTodolists, addTodolist, removeTodolist, changeTodolistTitle, reorderTodolist };
 
 export type FilterValuesType = "all" | "active" | "completed";
 export type TodolistDomainType = TodolistType & {
