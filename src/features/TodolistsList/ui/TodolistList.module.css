@@ -29,7 +29,6 @@
 
   .todolists {
     margin: 0 auto;
-    align-items: center;
     justify-content: left;
   }
 }
@@ -37,5 +36,9 @@
 @media (max-width: 900px) {
   .todolistlistBlock {
     max-width: 310px;
+
+  }
+  .todolist {
+    align-items: flex-start;
   }
 }
