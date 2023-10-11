@@ -12,12 +12,30 @@
 .todolists {
   display: flex;
   justify-content: left;
+  padding-bottom: 20px;
+}
+
+.todolist {
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: #000000 0 0 5px;
 }
 
 @media (max-width: 1200px) {
+  .todolistlistBlock {
+    max-width: 645px;
+  }
+
   .todolists {
     margin: 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .todolistlistBlock {
+    max-width: 310px;
   }
 }

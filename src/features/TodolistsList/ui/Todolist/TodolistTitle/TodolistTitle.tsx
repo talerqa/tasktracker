@@ -5,6 +5,7 @@ import { Delete } from "@mui/icons-material";
 import { useActions } from "common/hooks";
 import { TodolistDomainType, todolistsThunks } from "features/TodolistsList/model/todolists/todolists.slice";
 import InfoSharpIcon from "@mui/icons-material/InfoSharp";
+import s from "./TodolistTitle.module.css";
 
 type Props = {
   todolist: TodolistDomainType;
@@ -33,14 +34,14 @@ export const TodolistTitle: FC<Props> = ({ todolist }) => {
 
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div className={s.infoBlock}>
         <IconButton onMouseEnter={handleMouseOver} onMouseLeave={handleMouseLeave}>
           <InfoSharpIcon fontSize="small" />
         </IconButton>
-        <div style={{ width: "90%", height: "35px", alignSelf: "center", margin: "0 auto", textAlign: "center" }}>
+        <div className={s.dateInfo}>
           {showDateCreate && (
             <Fade in={showDateCreate}>
-              <p style={{ margin: "0", fontSize: "14px", fontWeight: "700" }}>Created {finishedData}</p>
+              <p className={s.textDate}>Created {finishedData}</p>
             </Fade>
           )}
         </div>

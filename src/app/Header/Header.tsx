@@ -5,7 +5,6 @@ import { selectAppStatus } from "app/app.selectors";
 import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
 import { useActions } from "common/hooks";
 import { authThunks } from "features/auth/model/auth.slice";
-import { todolistsThunks } from "features/TodolistsList/model/todolists/todolists.slice";
 import s from "./Header.module.css";
 import img from "./../../common/img/logo.png";
 
@@ -17,7 +16,7 @@ export const Header = () => {
   const logoutHandler = () => logout();
   return (
     <div className={s.appBar}>
-      <AppBar position="static" color="inherit" style={{ background: "#FFFFFF" }}>
+      <div className={s.appBarContainer}>
         <Toolbar className={s.toolBar}>
           <a className={s.logoInfo} href="#">
             <img className={s.logo} src={img} alt="logo" />
@@ -43,10 +42,10 @@ export const Header = () => {
             </Button>
           )}
         </Toolbar>
-        <div style={{ height: "5px", color: "grey.500" }}>
-          {status === "loading" && <LinearProgress color="inherit" />}
-        </div>
-      </AppBar>
+      </div>
+      <div style={{ height: "5px", color: "grey.500" }}>
+        {status === "loading" && <LinearProgress color="inherit" style={{ width: "100%" }} />}
+      </div>
     </div>
   );
 };
