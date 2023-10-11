@@ -1,3 +1,21 @@
 .isDone {
   opacity: 0.5;
 }
+
+.task {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: flex;
+  width: 280px;
+  word-break: break-word;
+  font-size: 20px;
+  font-weight: 400;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid rgba(162, 162, 162, 0.14);
+}
+
+.task:last-child {
+  border-bottom: none;
+}
+

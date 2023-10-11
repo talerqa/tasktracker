@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Button, LinearProgress, Toolbar, Typography } from "@mui/material";
+import { Button, LinearProgress, Toolbar, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectAppStatus } from "app/app.selectors";
 import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
@@ -27,11 +27,13 @@ export const Header = () => {
           {isLoggedIn && (
             <Button
               style={{
+                textTransform: "none",
                 fontSize: "16px",
-                backgroundColor: "#A2A2A223",
+                backgroundColor: "rgba(243,243,243,0.87)",
+                boxShadow: "#000000 0 0 4px",
                 border: "1px solid black",
-                fontWeight: "600",
-                color: "rgb(0, 0, 0)",
+                fontWeight: "700",
+                color: "rgba(0,0,0,0.8)",
               }}
               variant="outlined"
               size="large"
@@ -43,7 +45,7 @@ export const Header = () => {
           )}
         </Toolbar>
       </div>
-      <div style={{ height: "5px", color: "grey.500" }}>
+      <div style={{ height: "3px" }}>
         {status === "loading" && <LinearProgress color="inherit" style={{ width: "100%" }} />}
       </div>
     </div>

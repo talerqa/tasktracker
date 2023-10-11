@@ -21,7 +21,6 @@ export const todolistsApi = {
   },
 };
 
-// Types
 export type ReorderType = {
   id: any;
   order: number;

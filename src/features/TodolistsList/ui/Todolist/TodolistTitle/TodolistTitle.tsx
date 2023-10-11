@@ -49,19 +49,8 @@ export const TodolistTitle: FC<Props> = ({ todolist }) => {
           <Delete />
         </IconButton>
       </div>
-      <div
-        style={{
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "55px",
-          paddingBottom: "10px",
-        }}
-      >
-        <div style={{ margin: "0", fontSize: "22px", fontWeight: "700" }}>
-          <EditableSpan value={title} onChange={changeTodolistTitleHandler} />
-        </div>
+      <div className={s.editablespanBlock}>
+        <EditableSpan value={title} onChange={changeTodolistTitleHandler} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
   status: "idle" as RequestStatusType,
@@ -26,7 +26,7 @@ const slice = createSlice({
         (action) => {
           return action.type.endsWith("/pending");
         },
-        (state, action) => {
+        (state) => {
           state.status = "loading";
         }
       )
@@ -48,7 +48,7 @@ const slice = createSlice({
         (action) => {
           return action.type.endsWith("/fulfilled");
         },
-        (state, action) => {
+        (state) => {
           state.status = "succeeded";
         }
       ),

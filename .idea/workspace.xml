@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: warnings">
-      <change afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.module.css" afterDir="false" />
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: style todolist, header, buttons">
+      <change afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/Editablespan.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,12 +60,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "fix/styled",
-    "last_opened_file_path": "D:/web/it-incubator/1-todolist/src/features/TodolistsList/ui/Todolist/TodolistTitle",
+    "last_opened_file_path": "D:/web/it-incubator/1-todolist/src/common/components/EditableSpan",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/web/it-incubator/1-todolist/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "D:\\web\\it-incubator\\1-todolist\\node_modules\\prettier",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -76,21 +76,45 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\web\it-incubator\1-todolist\src\common\components\EditableSpan" />
+      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui\Todolist\FilterTasksButtons" />
       <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui\Todolist\TodolistTitle" />
       <recent name="D:\web\it-incubator\1-todolist\src\common\img" />
       <recent name="D:\web\it-incubator\1-todolist\public" />
-      <recent name="D:\web\it-incubator\1-todolist\src\app\Header" />
-      <recent name="D:\web\it-incubator\1-todolist\src\common\components\AddItemForm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui\Todolist\FilterTasksButtons" />
       <recent name="D:\web\it-incubator\1-todolist\public" />
       <recent name="D:\web\it-incubator\1-todolist\src\common\components\AddItemForm" />
       <recent name="D:\web\it-incubator\1-todolist\src\common\api" />
       <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui" />
-      <recent name="D:\web\it-incubator\1-todolist\src\app\Error" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Jest.correct error message should be set">
+    <configuration name="correct error message should be set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/app/app.reducer.test.ts" />
+      <test-names>
+        <test-name value="correct error message should be set" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="correct status should be set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/app/app.reducer.test.ts" />
+      <test-names>
+        <test-name value="correct status should be set" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -123,9 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.correct error message should be set" />
+        <item itemvalue="Jest.correct status should be set" />
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -513,7 +539,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697049405909</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fix: style todolist">
+      <option name="closed" value="true" />
+      <created>1697059814352</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1697059814352</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix: style todolist, header, buttons">
+      <option name="closed" value="true" />
+      <created>1697061418317</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1697061418317</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,8 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: remove unuse files and folders" />
-    <MESSAGE value="add: addMatcher" />
     <MESSAGE value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
     <MESSAGE value="add: todolist.api and tasks.api" />
     <MESSAGE value="ref: name files, name props" />
@@ -557,6 +597,8 @@
     <MESSAGE value="fix: style components" />
     <MESSAGE value="fix: bug when delete todolist, add: style on components" />
     <MESSAGE value="fix: warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: warnings" />
+    <MESSAGE value="fix: style todolist" />
+    <MESSAGE value="fix: style todolist, header, buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: style todolist, header, buttons" />
   </component>
 </project>

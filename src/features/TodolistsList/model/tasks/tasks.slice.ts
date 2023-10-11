@@ -59,7 +59,7 @@ const slice = createSlice({
 
 const fetchTasks = createAppAsyncThunk<{ tasks: TaskType[]; todolistId: string }, string>(
   "tasks/fetchTasks",
-  async (todolistId, thunkAPI) => {
+  async (todolistId, _) => {
     const res = await tasksApi.getTasks(todolistId);
     const tasks = res.data.items;
     return { tasks, todolistId };
