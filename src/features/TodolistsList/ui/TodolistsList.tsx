@@ -9,15 +9,23 @@ import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
 import { selectTodolists } from "features/TodolistsList/model/todolists/todolists.selectors";
 import { Todolist } from "features/TodolistsList/ui/Todolist/Todolist";
 import s from "./TodolistList.module.css";
+import { tasksThunks } from "features/TodolistsList/model/tasks/tasks.slice";
 
 export const TodolistsList = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const todolists = useSelector(selectTodolists);
   const { addTodolist: addTodolistThunk, fetchTodolists } = useActions(todolistsThunks);
+  const { fetchTasks } = useActions(tasksThunks);
 
   useEffect(() => {
     if (!isLoggedIn) return;
-    fetchTodolists();
+    fetchTodolists()
+      .unwrap()
+      .then((res) => {
+        res.todolists.forEach((todolist) => {
+          fetchTasks(todolist.id);
+        });
+      });
   }, [isLoggedIn]);
 
   const addTodolist = useCallback((title: string) => {
