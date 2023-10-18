@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: components">
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="fix: fetch task as promise after fetchtodolist">
+      <change afterPath="$PROJECT_DIR$/src/common/img/readme/Mobile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/img/readme/auth.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/img/readme/todolist.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/img/readme/todolists-main-page.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/Editablespan.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/Editablespan.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +55,7 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2GihuhOiV9CI8hhYzy0IBmUYDpt" />
   <component name="ProjectLevelVcsManager">
@@ -98,16 +102,16 @@
       <recent name="D:\web\it-incubator\1-todolist\src\features\TodolistsList\ui" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="correct error message should be set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.ids should be equals">
+    <configuration name="ids should be equals" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/app/app.reducer.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/features/TodolistsList/model/todolists-tasks.reducer.test.ts" />
       <test-names>
-        <test-name value="correct error message should be set" />
+        <test-name value="ids should be equals" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -153,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.ids should be equals" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.test" />
-        <item itemvalue="Jest.correct error message should be set" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +220,10 @@
       <workItem from="1697029912173" duration="1794000" />
       <workItem from="1697032570324" duration="385000" />
       <workItem from="1697032980610" duration="17634000" />
-      <workItem from="1697101843287" duration="1695000" />
+      <workItem from="1697101843287" duration="2130000" />
+      <workItem from="1697534210834" duration="26000" />
+      <workItem from="1697534688055" duration="42000" />
+      <workItem from="1697652861804" duration="1362000" />
     </task>
     <task id="LOCAL-00001" summary="add: login, logout">
       <created>1690985529404</created>
@@ -562,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697061418317</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="fix: fetch task as promise after fetchtodolist">
+      <option name="closed" value="true" />
+      <created>1697103786772</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1697103786772</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +596,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="remove: thunk-try catch, HandleServerAppError. handleServerNetworkError" />
     <MESSAGE value="add: todolist.api and tasks.api" />
     <MESSAGE value="ref: name files, name props" />
     <MESSAGE value="ref: add component from app component" />
@@ -606,6 +620,7 @@
     <MESSAGE value="fix: warnings" />
     <MESSAGE value="fix: style todolist" />
     <MESSAGE value="fix: style todolist, header, buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: style todolist, header, buttons" />
+    <MESSAGE value="fix: fetch task as promise after fetchtodolist" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fetch task as promise after fetchtodolist" />
   </component>
 </project>
